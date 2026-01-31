@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DORKAS | Infraestructura Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        // === PALETA CORPORATIVA "PREMIUM DARK" ===
+                        brand: {
+                            base: '#020617',      // Slate 950 (Fondo Profundo y Elegante)
+                            surface: '#0f172a',   // Slate 900 (Tarjetas)
+                            highlight: '#1e293b', // Slate 800 (Hover)
+                            
+                            // Tu Paleta Vibrante (Accent Colors)
+                            pink: '#FF4F87',
+                            purple: '#7A3FCF',
+                            blue: '#3F8CFF',
+                            
+                            text: {
+                                main: '#f8fafc',  // Blanco hueso (más suave a la vista)
+                                muted: '#94a3b8'  // Gris azulado
+                            }
+                        }
+                    },
+                    backgroundImage: {
+                        // Gradiente elegante y sutil para botones y detalles
+                        'brand-gradient': 'linear-gradient(135deg, #FF4F87 0%, #7A3FCF 50%, #3F8CFF 100%)',
+                        'brand-gradient-hover': 'linear-gradient(135deg, #FF4F87 20%, #7A3FCF 70%, #3F8CFF 100%)',
+                        'card-overlay': 'linear-gradient(to top, #0f172a 0%, transparent 100%)'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Patrón de fondo más profesional (puntos en lugar de cuadrícula) */
+        .tech-pattern {
+            background-color: #020617;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        
+        /* Glassmorphism refinado */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(to right, #FF4F87, #7A3FCF, #3F8CFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Clase para ocultar el splash screen */
+        .splash-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Mockup Celular */
+        .phone-mockup {
+            border: 14px solid #1e293b;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            position: relative;
+            background: #020617;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background: #1e293b;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body class="bg-brand-base text-brand-text-main font-sans antialiased overflow-x-hidden tech-pattern">
+
+    <!-- === SPLASH SCREEN DE BIENVENIDA === -->
+    <div id="splash-screen" class="fixed inset-0 z-[100] bg-brand-base flex flex-col items-center justify-center transition-opacity duration-1000 ease-out">
+        <!-- Decoración de fondo del splash -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-purple/10 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="relative z-10 text-center animate-pulse-slow">
+            <!-- Logo Grande (Ajustado a h-52 / aprox 200px) -->
+            <div class="mb-6 flex justify-center">
+                 <img src="logo.png" alt="DORKAS" class="h-52 w-auto object-contain drop-shadow-[0_0_15px_rgba(122,63,207,0.5)]" onerror="this.style.display='none'; document.getElementById('splash-backup-logo').style.display='flex'">
+                 
+                 <!-- Backup Logo para Splash -->
+                 <div id="splash-backup-logo" class="hidden items-center justify-center w-24 h-24 bg-brand-gradient rounded-2xl shadow-2xl shadow-brand-purple/40">
+                    <i class="fa-solid fa-cube text-white text-5xl"></i>
+                 </div>
+            </div>
+            
+            <!-- Texto de Bienvenida -->
+            <h1 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-2">Bienvenido a <span class="text-gradient">DORKAS</span></h1>
+            <p class="text-brand-text-muted text-sm tracking-[0.2em] uppercase font-bold">Infraestructura Digital</p>
+        </div>
+    </div>
+
+    <!-- Script para manejar el Splash Screen -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const splash = document.getElementById('splash-screen');
+                splash.classList.add('splash-hidden');
+            }, 2500); // El logo se mantiene 2.5 segundos antes de desvanecerse
+        });
+    </script>
+    <!-- === FIN SPLASH SCREEN === -->
+
+    <!-- Navbar Premium -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 border-b border-white/5 bg-brand-base/90 backdrop-blur-md">
+        <div class="max-w-[1920px] mx-auto px-6 h-24 flex justify-between items-center">
+            
+            <!-- LOGO (Ajustado a h-20) -->
+            <div class="flex items-center gap-4">
+                <img src="logo.png" alt="DORKAS" class="h-20 w-auto object-contain transition-transform hover:scale-105" onerror="this.style.display='none'; document.getElementById('backup-logo').style.display='flex'">
+                
+                <!-- Logo Respaldo -->
+                <div id="backup-logo" class="hidden items-center gap-3 cursor-pointer">
+                    <div class="w-10 h-10 bg-brand-gradient rounded-lg flex items-center justify-center shadow-lg shadow-brand-purple/20">
+                        <i class="fa-solid fa-cube text-white text-xl"></i>
+                    </div>
+                    <div class="flex flex-col leading-none">
+                        <span class="font-extrabold text-2xl tracking-tight text-white">DORKAS</span>
+                        <span class="text-[10px] tracking-[0.2em] text-brand-text-muted uppercase">Sistemas Operativos</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Menú Escritorio -->
+            <div class="hidden md:flex gap-12 text-sm font-semibold tracking-wide text-brand-text-muted">
+                <a href="#proyectos" class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SISTEMAS</a>
+                <a href="#metodologia" class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-purple">METODOLOGÍA</a>
+                <a href="#equipo" class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-pink">EQUIPO</a>
+            </div>
+
+            <a href="#contacto" class="hidden md:flex items-center gap-2 px-8 py-3 bg-brand-surface hover:bg-brand-highlight border border-white/10 rounded-full transition-all text-sm font-bold shadow-lg shadow-black/20 group">
+                <span class="text-gradient group-hover:opacity-80">Iniciar Proyecto</span>
+                <i class="fa-solid fa-arrow-right text-brand-blue group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <!-- Botón Móvil -->
+            <button class="md:hidden text-white p-2">
+                <i class="fa-solid fa-bars-staggered text-3xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section (ESTRUCTURA CORREGIDA: Side by Side) -->
+    <header class="relative pt-40 pb-20 px-6 max-w-[1920px] mx-auto z-10">
+        <!-- Decoración de Fondo (Spots de luz sutiles) -->
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-purple/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto relative">
+            
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                
+                <!-- Columna Izquierda: Contenido Principal -->
+                <div class="md:col-span-7 flex flex-col justify-center">
+                    
+                    <div class="inline-flex items-center gap-3 px-4 py-2 w-fit rounded-full border border-brand-purple/30 bg-brand-purple/5 mb-8 backdrop-blur-sm">
+                        <span class="flex h-3 w-3 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-pink opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-pink"></span>
+                        </span>
+                        <span class="text-brand-text-main text-xs font-bold tracking-widest uppercase">Tecnología Industrial 4.0</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-8 leading-[0.95]">
+                        CONTROL<br>
+                        OPERATIVO<br>
+                        <span class="text-gradient">SIN SOFTWARE.</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-brand-text-muted font-light leading-relaxed mb-10 border-l-4 border-brand-gradient pl-6 max-w-2xl">
+                        Convertimos tu Google Workspace en una <strong class="text-white">maquinaria de datos</strong>. 
+                        Contratos, flotas y auditorías bajo una estructura fija, económica y escalable.
+                    </p>
+
+                    <div class="flex flex-wrap gap-5">
+                        <a href="#contacto" class="px-10 py-5 bg-brand-gradient hover:bg-brand-gradient-hover text-white font-bold rounded-xl shadow-2xl shadow-brand-purple/20 transition-all transform hover:-translate-y-1 text-lg">
+                            Agendar Demo
+                        </a>
+                        <a href="#proyectos" class="px-10 py-5 bg-brand-surface border border-white/10 hover:border-white/30 text-white font-medium rounded-xl transition-all hover:bg-brand-highlight text-lg">
+                            Ver Catálogo
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Columna Derecha: Mockup Celular con Video (1 min) -->
+                <div class="md:col-span-5 flex justify-center md:justify-end h-full items-center pt-8 md:pt-0">
+                    <div class="phone-mockup w-[300px] h-[600px] animate-float relative group cursor-pointer shadow-2xl shadow-brand-blue/10">
+                        <div class="phone-notch"></div>
+                        
+                        <!-- Video Container / Placeholder -->
+                        <div class="w-full h-full relative">
+                            <!-- Imagen de fondo del video -->
+                            <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover opacity-60">
+                            
+                            <!-- Overlay de Reproducción -->
+                            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-all">
+                                <div class="w-20 h-20 bg-brand-gradient rounded-full flex items-center justify-center shadow-lg shadow-brand-pink/40 mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-play text-white text-3xl ml-2"></i>
+                                </div>
+                                <span class="text-white font-bold tracking-widest uppercase text-sm">Ver Demo (1 Min)</span>
+                                <span class="text-brand-text-muted text-xs mt-2">Así se ve en tu celular</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section (ACTUALIZADA CON MEDIA) -->
+    <section id="proyectos" class="relative z-10 py-32 border-y border-white/5 bg-brand-base">
+        <div class="max-w-[1920px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-20 max-w-7xl mx-auto">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Sistemas Modulares</h2>
+                    <p class="text-brand-text-muted text-lg max-w-xl">Elige los bloques funcionales que tu operación necesita. Mira cómo funcionan.</p>
+                </div>
+                <!-- Indicador visual -->
+                <div class="flex gap-2">
+                    <div class="h-1 w-12 bg-brand-pink rounded-full"></div>
+                    <div class="h-1 w-4 bg-brand-purple rounded-full"></div>
+                    <div class="h-1 w-4 bg-brand-blue rounded-full"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                
+                <!-- Card 1: Auditoría (Destacado) -->
+                <article class="group relative bg-brand-surface rounded-2xl overflow-hidden border border-white/5 hover:border-brand-purple/50 transition-all duration-300 hover:shadow-2xl hover:shadow-brand-purple/10 flex flex-col">
+                    <!-- MEDIA CONTAINER -->
+                    <div class="relative h-48 w-full overflow-hidden bg-brand-base">
+                        <div class="absolute top-4 right-4 z-20">
+                             <span class="bg-brand-pink text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg tracking-wider">TOP SELLER</span>
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
+                            <i class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600" alt="Demo Auditoría" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <!-- Gradient Overlay Bottom -->
+                        <div class="absolute bottom-0 left-0 w-full h-16 bg-card-overlay z-10"></div>
+                    </div>
+
+                    <div class="p-8 pt-4 flex-1 flex flex-col relative z-20">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-base border border-white/10 flex items-center justify-center text-brand-pink shrink-0">
+                                <i class="fa-solid fa-clipboard-check text-lg"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-brand-pink transition-colors">Auditoría 360</h3>
+                        </div>
+                        
+                        <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">
+                            Control de calidad con evidencia obligatoria. Geolocalización GPS "anti-fraude", fotos forzadas y reportes PDF automáticos al instante.
+                        </p>
+                        
+                        <div class="border-t border-white/5 pt-4 flex flex-wrap gap-2 mt-auto">
+                            <span class="text-[10px] font-bold text-brand-text-muted bg-brand-base px-2 py-1 rounded border border-white/5 uppercase">GPS LOCK</span>
+                            <span class="text-[10px] font-bold text-brand-text-muted bg-brand-base px-2 py-1 rounded border border-white/5 uppercase">FOTO EVIDENCIA</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Flota -->
+                <article class="group relative bg-brand-surface rounded-2xl overflow-hidden border border-white/5 hover:border-brand-blue/50 transition-all duration-300 flex flex-col hover:-translate-y-1">
+                    <!-- MEDIA CONTAINER -->
+                    <div class="relative h-48 w-full overflow-hidden bg-brand-base">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
+                            <i class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=600" alt="Demo Flota" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute bottom-0 left-0 w-full h-16 bg-card-overlay z-10"></div>
+                    </div>
+
+                    <div class="p-8 pt-4 flex-1 flex flex-col relative z-20">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-base border border-white/10 flex items-center justify-center text-brand-blue shrink-0">
+                                <i class="fa-solid fa-truck-fast text-lg"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-brand-blue transition-colors">Control Flota</h3>
+                        </div>
+                        <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">
+                            Gestión logística en tiempo real. Disponibilidad, asignación de conductores y alertas de mantenimiento preventivo.
+                        </p>
+                         <div class="border-t border-white/5 pt-4 flex flex-wrap gap-2 mt-auto">
+                            <span class="text-[10px] font-bold text-brand-text-muted bg-brand-base px-2 py-1 rounded border border-white/5 uppercase">KM REAL</span>
+                            <span class="text-[10px] font-bold text-brand-text-muted bg-brand-base px-2 py-1 rounded border border-white/5 uppercase">MANTENCIONES</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: OTs -->
+                <article class="group relative bg-brand-surface rounded-2xl overflow-hidden border border-white/5 hover:border-brand-purple/50 transition-all duration-300 flex flex-col hover:-translate-y-1">
+                    <!-- MEDIA CONTAINER -->
+                    <div class="relative h-48 w-full overflow-hidden bg-brand-base">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
+                            <i class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=600" alt="Demo OTs" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute bottom-0 left-0 w-full h-16 bg-card-overlay z-10"></div>
+                    </div>
+
+                    <div class="p-8 pt-4 flex-1 flex flex-col relative z-20">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-base border border-white/10 flex items-center justify-center text-brand-purple shrink-0">
+                                <i class="fa-solid fa-screwdriver-wrench text-lg"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-brand-purple transition-colors">Órdenes (OT)</h3>
+                        </div>
+                        <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">
+                            Digitalización del flujo técnico. Asignación y cierre de tareas desde el móvil sin papel.
+                        </p>
+                        <div class="border-t border-white/5 pt-4 flex flex-wrap gap-2 mt-auto">
+                            <span class="text-[10px] font-bold text-brand-text-muted bg-brand-base px-2 py-1 rounded border border-white/5 uppercase">FIRMA DIGITAL</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4: Legal -->
+                <article class="group relative bg-brand-surface rounded-2xl overflow-hidden border border-white/5 hover:border-green-500/50 transition-all duration-300 flex flex-col hover:-translate-y-1">
+                    <!-- MEDIA CONTAINER -->
+                    <div class="relative h-48 w-full overflow-hidden bg-brand-base">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
+                            <i class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=600" alt="Demo Legal" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute bottom-0 left-0 w-full h-16 bg-card-overlay z-10"></div>
+                    </div>
+
+                    <div class="p-8 pt-4 flex-1 flex flex-col relative z-20">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-base border border-white/10 flex items-center justify-center text-green-500 shrink-0">
+                                <i class="fa-solid fa-file-contract text-lg"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-green-500 transition-colors">Legal Auto</h3>
+                        </div>
+                        <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">
+                            Generador automático de documentos. De formulario a contrato PDF firmado en segundos.
+                        </p>
+                        <div class="border-t border-white/5 pt-4 flex flex-wrap gap-2 mt-auto">
+                            <span class="text-[10px] font-bold text-brand-text-muted bg-brand-base px-2 py-1 rounded border border-white/5 uppercase">AUTO PDF</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5: BI -->
+                <article class="group relative bg-brand-surface rounded-2xl overflow-hidden border border-white/5 hover:border-yellow-500/50 transition-all duration-300 flex flex-col hover:-translate-y-1">
+                     <!-- MEDIA CONTAINER -->
+                     <div class="relative h-48 w-full overflow-hidden bg-brand-base">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
+                            <i class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" alt="Demo BI" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute bottom-0 left-0 w-full h-16 bg-card-overlay z-10"></div>
+                    </div>
+
+                    <div class="p-8 pt-4 flex-1 flex flex-col relative z-20">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-base border border-white/10 flex items-center justify-center text-yellow-500 shrink-0">
+                                <i class="fa-solid fa-chart-line text-lg"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-yellow-500 transition-colors">KPI Center</h3>
+                        </div>
+                        <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">
+                            Inteligencia de negocios. Dashboards visuales conectando Flota, Ventas y OT.
+                        </p>
+                        <div class="border-t border-white/5 pt-4 flex flex-wrap gap-2 mt-auto">
+                            <span class="text-[10px] font-bold text-brand-text-muted bg-brand-base px-2 py-1 rounded border border-white/5 uppercase">DATA STUDIO</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6: Custom -->
+                <article class="group relative bg-brand-highlight rounded-2xl overflow-hidden border border-white/5 flex flex-col items-center justify-center text-center p-10 hover:border-brand-pink/50 transition-all">
+                    <!-- Sin imagen para destacar que es "en blanco" / personalizado -->
+                    <div class="w-20 h-20 rounded-full bg-brand-surface border border-brand-pink/20 flex items-center justify-center mb-6 shadow-lg shadow-brand-pink/10">
+                        <i class="fa-solid fa-pencil text-3xl text-brand-pink"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">¿Sistema a Medida?</h4>
+                    <p class="text-brand-text-muted text-sm mb-8">Construimos la herramienta exacta para tu dolor operativo.</p>
+                    <a href="#contacto" class="text-white text-xs font-bold uppercase tracking-widest border-b-2 border-brand-pink pb-1 hover:text-brand-pink transition-colors">
+                        Contactar Ingeniería
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section (DATOS AQUÍ AHORA) -->
+    <section id="metodologia" class="py-32 relative z-10 bg-brand-surface">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <span class="text-brand-blue font-bold text-sm tracking-widest uppercase block mb-6">Filosofía DORKAS</span>
+                <h2 class="text-5xl font-black text-white mb-8 leading-tight">Menos Software.<br><span class="text-brand-text-muted">Más Control.</span></h2>
+                <div class="w-24 h-2 bg-brand-gradient rounded-full"></div>
+                
+                <p class="mt-8 text-lg text-brand-text-muted font-light leading-relaxed mb-10">
+                    La mayoría de las empresas fallan implementando software costoso que nadie usa. 
+                    Nuestra metodología se basa en herramientas que tus operarios ya tienen en el bolsillo.
+                </p>
+
+                <!-- Datos Integrados aquí -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-brand-base p-5 rounded-xl border border-white/5 flex flex-col justify-center">
+                        <div class="text-4xl font-black text-white mb-1">0%</div>
+                        <div class="text-[10px] text-brand-text-muted uppercase tracking-widest font-bold">Costo Licencias</div>
+                    </div>
+                    <div class="bg-brand-base p-5 rounded-xl border border-white/5 flex flex-col justify-center">
+                        <div class="text-4xl font-black text-white mb-1">100%</div>
+                        <div class="text-[10px] text-brand-text-muted uppercase tracking-widest font-bold">Propiedad de Datos</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Item 1 -->
+                <div class="glass-panel p-6 rounded-xl flex gap-6 hover:bg-brand-highlight transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-brand-purple/10 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-layer-group text-brand-purple text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-1">Estructura Fija</h3>
+                        <p class="text-brand-text-muted text-sm">No improvisamos. Implementamos sistemas probados que ordenan el caos en semanas.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="glass-panel p-6 rounded-xl flex gap-6 hover:bg-brand-highlight transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-brand-pink/10 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-server text-brand-pink text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-1">Infraestructura Propia</h3>
+                        <p class="text-brand-text-muted text-sm">Todo vive en tu nube de Google. Sin costos ocultos ni "secuestro" de datos.</p>
+                    </div>
+                </div>
+                 <!-- Item 3 -->
+                 <div class="glass-panel p-6 rounded-xl flex gap-6 hover:bg-brand-highlight transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-brand-blue/10 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-hand-holding-heart text-brand-blue text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-1">Mentalidad de Ayuda</h3>
+                        <p class="text-brand-text-muted text-sm">Diseñamos para el operario real, no para el escritorio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipo" class="py-32 relative z-10 border-t border-white/5 bg-brand-base">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20 text-center max-w-2xl mx-auto">
+                <span class="text-brand-purple font-bold text-xs tracking-widest uppercase">Liderazgo Técnico</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Ingeniería Detrás del Sistema</h2>
+                <p class="text-brand-text-muted font-light">
+                    No somos una agencia. Somos ingenieros aplicando física y ciencia de datos a problemas operativos.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Susana -->
+                <div class="bg-brand-surface border border-white/5 p-8 rounded-2xl flex flex-col items-center text-center hover:border-brand-pink/50 transition-all group hover:-translate-y-2">
+                    <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-surface ring-2 ring-brand-pink/50 shadow-2xl mb-8 relative">
+                        <!-- Busca 'susana.jpg' -->
+                        <img src="susana.jpg" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300&h=300'" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-white mb-2">Susana Jimenez</h3>
+                    <p class="text-brand-pink text-xs font-bold uppercase tracking-wider mb-8">Co-Fundadora & Operaciones</p>
+                    
+                    <!-- CV LIST -->
+                    <ul class="space-y-4 text-left w-full max-w-xs mx-auto">
+                        <li class="border-l-2 border-brand-pink/30 pl-4">
+                            <div class="text-white text-sm font-bold leading-tight mb-1">Ing. Mecánica en Mantenimiento Industrial</div>
+                            <div class="text-brand-text-muted text-xs">Universidad Tecnológica de Chile, INACAP</div>
+                        </li>
+                        <li class="border-l-2 border-brand-pink/30 pl-4">
+                            <div class="text-white text-sm font-bold leading-tight mb-1">Mg. Diseño, Fabricación y Mantenimiento Aeroespacial</div>
+                            <div class="text-brand-text-muted text-xs">Universidad Rey Juan Carlos, España</div>
+                        </li>
+                        <li class="border-l-2 border-brand-pink/30 pl-4">
+                            <div class="text-white text-sm font-bold leading-tight mb-1">Dipl. Gestión de Activos y Mantenimiento Industrial</div>
+                            <div class="text-brand-text-muted text-xs">Pontificia Universidad Católica de Chile</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- David -->
+                <div class="bg-brand-surface border border-white/5 p-8 rounded-2xl flex flex-col items-center text-center hover:border-brand-blue/50 transition-all group hover:-translate-y-2">
+                    <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-surface ring-2 ring-brand-blue/50 shadow-2xl mb-8 relative">
+                        <!-- Busca 'david.jpg' -->
+                        <img src="david.jpg" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300&h=300'" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-white mb-2">David Basantes</h3>
+                    <p class="text-brand-blue text-xs font-bold uppercase tracking-wider mb-8">Co-Fundador & Data Science</p>
+                    
+                    <!-- CV LIST -->
+                    <ul class="space-y-4 text-left w-full max-w-xs mx-auto">
+                        <li class="border-l-2 border-brand-blue/30 pl-4">
+                            <div class="text-white text-sm font-bold leading-tight mb-1">Ingeniería Física</div>
+                            <div class="text-brand-text-muted text-xs">Universidad Andrés Bello (UNAB)</div>
+                        </li>
+                        <li class="border-l-2 border-brand-blue/30 pl-4">
+                            <div class="text-white text-sm font-bold leading-tight mb-1">Licenciatura en Física Aplicada</div>
+                            <div class="text-brand-text-muted text-xs">Universidad Andrés Bello</div>
+                        </li>
+                         <li class="border-l-2 border-brand-blue/30 pl-4">
+                            <div class="text-white text-sm font-bold leading-tight mb-1">Especialización en Ciencia de Datos</div>
+                            <div class="text-brand-text-muted text-xs">Coursera</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-32 relative z-10 overflow-hidden bg-brand-base border-t border-white/5">
+        <div class="absolute inset-0 bg-brand-gradient opacity-5 blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-20">
+            <h2 class="text-5xl md:text-7xl font-black text-white mb-8">¿Listo para el Control?</h2>
+            <p class="text-xl text-brand-text-muted mb-12 font-light max-w-xl mx-auto">
+                Agenda una demo de 15 minutos. Sin compromiso. Te muestro cómo funciona todo desde mi celular.
+            </p>
+            
+            <form class="max-w-md mx-auto space-y-4">
+                <div class="relative group">
+                    <input type="text" placeholder="Tu Nombre" class="w-full bg-brand-surface border border-brand-highlight rounded-xl py-4 px-6 text-white placeholder-gray-600 focus:outline-none focus:border-brand-pink transition-colors">
+                </div>
+                <div class="relative group">
+                    <input type="tel" placeholder="Tu WhatsApp (+569...)" class="w-full bg-brand-surface border border-brand-highlight rounded-xl py-4 px-6 text-white placeholder-gray-600 focus:outline-none focus:border-brand-blue transition-colors">
+                </div>
+                
+                <button type="submit" class="w-full mt-6 bg-brand-gradient text-white font-bold py-5 rounded-xl hover:shadow-2xl hover:shadow-brand-purple/30 transition-all transform hover:-translate-y-1 tracking-wide uppercase text-sm">
+                    Solicitar Demo
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-brand-base relative z-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <span class="font-extrabold text-white text-xl tracking-tight">DORKAS<span class="text-brand-pink">.</span></span>
+                <span class="text-brand-text-muted text-xs border-l border-white/10 pl-3 ml-1">SANTIAGO, CHILE</span>
+            </div>
+            <p class="text-brand-text-muted text-xs">&copy; 2024 DORKAS SpA. Todos los derechos reservados.</p>
+            <div class="flex gap-6">
+                <a href="#" class="text-brand-text-muted hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-brand-text-muted hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
