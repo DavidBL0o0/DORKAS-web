@@ -149,6 +149,20 @@
             transform: scale(1.1);
             color: #FF4F87;
         }
+
+        /* Lógica Menú Móvil Overflow */
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        #mobile-menu {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+        }
+
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
     </style>
 </head>
 
@@ -219,13 +233,15 @@
             </div>
 
             <!-- Menú Escritorio -->
-            <div class="hidden md:flex gap-12 text-sm font-semibold tracking-wide text-brand-text-muted">
+            <div class="hidden md:flex gap-8 text-sm font-semibold tracking-wide text-brand-text-muted">
                 <a href="#proyectos"
                     class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SISTEMAS</a>
                 <a href="#metodologia"
                     class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-purple">METODOLOGÍA</a>
                 <a href="#equipo"
                     class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-pink">EQUIPO</a>
+                <a href="#opiniones"
+                    class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">OPINIONES</a>
             </div>
 
             <a href="#contacto"
@@ -235,11 +251,58 @@
             </a>
 
             <!-- Botón Móvil -->
-            <button class="md:hidden text-white p-2">
-                <i class="fa-solid fa-bars-staggered text-3xl"></i>
+            <button id="menu-toggle" class="md:hidden text-white p-2 relative z-[60]">
+                <i class="fa-solid fa-bars-staggered text-3xl transition-transform duration-300"></i>
             </button>
         </div>
     </nav>
+
+    <!-- Menú Lateral Móvil -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[55] bg-brand-base flex flex-col items-center justify-center gap-8 md:hidden">
+        <div class="absolute inset-0 bg-brand-gradient opacity-5 blur-[100px] pointer-events-none"></div>
+        <a href="#proyectos" onclick="closeMobileMenu()"
+            class="text-3xl font-black text-white hover:text-brand-blue transition-colors">SISTEMAS</a>
+        <a href="#metodologia" onclick="closeMobileMenu()"
+            class="text-3xl font-black text-white hover:text-brand-purple transition-colors">METODOLOGÍA</a>
+        <a href="#equipo" onclick="closeMobileMenu()"
+            class="text-3xl font-black text-white hover:text-brand-pink transition-colors">EQUIPO</a>
+        <a href="#opiniones" onclick="closeMobileMenu()"
+            class="text-3xl font-black text-white hover:text-brand-blue transition-colors">OPINIONES</a>
+        <a href="#contacto" onclick="closeMobileMenu()"
+            class="mt-4 px-10 py-4 bg-brand-gradient text-white rounded-xl font-bold text-lg">INICIAR PROYECTO</a>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuToggle.querySelector('i');
+        const body = document.body;
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.toggle('active');
+            body.classList.toggle('menu-open', isOpen);
+
+            if (isOpen) {
+                menuIcon.classList.remove('fa-bars-staggered');
+                menuIcon.classList.add('fa-xmark');
+                menuIcon.classList.add('rotate-90');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.remove('rotate-90');
+                menuIcon.classList.add('fa-bars-staggered');
+            }
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+            menuIcon.classList.remove('fa-xmark', 'rotate-90');
+            menuIcon.classList.add('fa-bars-staggered');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+    </script>
 
     <!-- Hero Section (ESTRUCTURA CORREGIDA: Side by Side) -->
     <header class="relative pt-40 pb-20 px-6 max-w-[1920px] mx-auto z-10">
@@ -270,25 +333,25 @@
                     </div>
 
                     <h1
-                        class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-8 leading-[0.95]">
-                        CONTROL<br>
+                        class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-6 md:mb-8 leading-[1] md:leading-[0.95]">
+                        CONTROL<br class="hidden sm:block">
                         OPERATIVO<br>
                         <span class="text-gradient">100% A TU MEDIDA.</span>
                     </h1>
 
                     <p
-                        class="text-xl md:text-2xl text-brand-text-muted font-light leading-relaxed mb-10 border-l-4 border-brand-gradient pl-6 max-w-2xl">
+                        class="text-lg md:text-2xl text-brand-text-muted font-light leading-relaxed mb-10 border-l-4 border-brand-gradient pl-6 max-w-2xl">
                         Convertimos tu Google Workspace en una <strong class="text-white">maquinaria de datos</strong>.
                         Contratos, flotas y auditorías bajo una estructura fija, económica y escalable.
                     </p>
 
-                    <div class="flex flex-wrap gap-5">
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-5">
                         <a href="#contacto"
-                            class="px-10 py-5 bg-brand-gradient hover:bg-brand-gradient-hover text-white font-bold rounded-xl shadow-2xl shadow-brand-purple/20 transition-all transform hover:-translate-y-1 text-lg">
+                            class="px-8 sm:px-10 py-4 sm:py-5 bg-brand-gradient hover:bg-brand-gradient-hover text-white font-bold rounded-xl shadow-2xl shadow-brand-purple/20 transition-all transform hover:-translate-y-1 text-center text-base sm:text-lg">
                             Agendar Demo
                         </a>
                         <a href="#proyectos"
-                            class="px-10 py-5 bg-brand-surface border border-white/10 hover:border-white/30 text-white font-medium rounded-xl transition-all hover:bg-brand-highlight text-lg">
+                            class="px-8 sm:px-10 py-4 sm:py-5 bg-brand-surface border border-white/10 hover:border-white/30 text-white font-medium rounded-xl transition-all hover:bg-brand-highlight text-center text-base sm:text-lg">
                             Ver Catálogo
                         </a>
                     </div>
@@ -573,7 +636,7 @@
                         class="text-brand-text-muted">Más Control.</span></h2>
                 <div class="w-24 h-2 bg-brand-gradient rounded-full"></div>
 
-                <p class="mt-8 text-lg text-brand-text-muted font-light leading-relaxed mb-10">
+                <p class="mt-8 text-base md:text-lg text-brand-text-muted font-light leading-relaxed mb-10">
                     La mayoría de las empresas fallan implementando software costoso que nadie usa.
                     Nuestra metodología se basa en herramientas que tus operarios ya tienen en el bolsillo.
                 </p>
@@ -706,6 +769,95 @@
                             <div class="text-brand-text-muted text-xs">Coursera</div>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === SECCIÓN DE OPINIONES (GOOGLE MAPS STYLE) === -->
+    <section id="opiniones" class="py-32 relative z-10 bg-brand-surface/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Maps_icon_%282020%29.svg"
+                            class="h-6 w-auto" alt="Google Maps">
+                        <span class="text-brand-text-muted font-bold text-xs tracking-widest uppercase">Opiniones en
+                            Google Maps</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Confianza de Nuestros Clientes</h2>
+                    <div class="flex items-center justify-center md:justify-start gap-4">
+                        <div class="flex text-yellow-500">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-white font-bold text-lg">5.0 / 5.0</span>
+                        <span class="text-brand-text-muted text-sm">(1 reseña)</span>
+                    </div>
+                </div>
+                <a href="https://maps.google.com" target="_blank"
+                    class="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all text-xs font-bold tracking-widest text-white uppercase group">
+                    Escribir Reseña
+                </a>
+            </div>
+
+            <!-- Reviews Grid (Centered for single review) -->
+            <div class="flex justify-center max-w-4xl mx-auto">
+                <!-- Review: RentaloChile (REAL) -->
+                <div
+                    class="glass-panel p-10 md:p-12 rounded-3xl border border-brand-blue/30 bg-brand-blue/5 shadow-2xl shadow-brand-blue/20 transition-all group relative overflow-hidden">
+
+                    <!-- Decoración Sutil -->
+                    <div
+                        class="absolute -top-10 -right-10 w-40 h-40 bg-brand-blue/10 rounded-full blur-3xl group-hover:bg-brand-blue/20 transition-all">
+                    </div>
+
+                    <div class="flex flex-col md:flex-row items-center gap-8 mb-10 relative z-10">
+                        <div
+                            class="w-24 h-24 rounded-2xl overflow-hidden bg-white p-2 shadow-xl flex items-center justify-center shrink-0 transform -rotate-3 group-hover:rotate-0 transition-transform">
+                            <!-- Logo de RentaloChile (Placeholder elegante si no hay imagen directa) -->
+                            <img src="https://rentalochile.cl/wp-content/uploads/2021/04/Logo-Rentalo-Chile-1.png"
+                                onerror="this.src='https://ui-avatars.com/api/?name=Rentalo+Chile&background=0f172a&color=3f8cff&bold=true'"
+                                class="w-full h-auto object-contain" alt="RentaloChile">
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h4 class="text-2xl font-black text-white mb-1">Peter Jiménez</h4>
+                            <p class="text-brand-blue font-bold text-sm uppercase tracking-[0.2em]">CEO RentaloChile</p>
+                            <div class="flex justify-center md:justify-start text-yellow-500 text-sm mt-3 gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10">
+                        <i class="fa-solid fa-quote-left text-brand-blue/20 text-6xl absolute -top-4 -left-4"></i>
+                        <p
+                            class="text-brand-text-main text-xl md:text-2xl leading-relaxed italic font-light relative z-10 pl-8">
+                            "DORKAS transformó nuestra operación por completo. Gracias a su sistema de <span
+                                class="text-white font-bold">gestión de flota</span>, contratos automatizados y control
+                            de gastos, logramos facilitar procesos que antes eran un caos. Un socio clave para
+                            RentaloChile."
+                        </p>
+                    </div>
+
+                    <div class="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-4 relative z-10">
+                        <span
+                            class="px-4 py-2 bg-brand-highlight rounded-full text-xs font-bold text-brand-text-muted border border-white/5 uppercase tracking-widest">Gestión
+                            de Flota</span>
+                        <span
+                            class="px-4 py-2 bg-brand-highlight rounded-full text-xs font-bold text-brand-text-muted border border-white/5 uppercase tracking-widest">Contratos
+                            Auto</span>
+                        <span
+                            class="px-4 py-2 bg-brand-highlight rounded-full text-xs font-bold text-brand-text-muted border border-white/5 uppercase tracking-widest">Control
+                            de Gastos</span>
+                    </div>
                 </div>
             </div>
         </div>
