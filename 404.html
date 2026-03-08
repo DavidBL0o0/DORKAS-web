@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada | DORKAS</title>
+    <meta name="description" content="Lo sentimos, esta página no existe. Vuelve al inicio de DORKAS.">
+    <meta name="robots" content="noindex">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            base: '#020617',
+                            surface: '#0f172a',
+                            highlight: '#1e293b',
+                            pink: '#FF4F87',
+                            purple: '#7A3FCF',
+                            blue: '#3F8CFF',
+                            text: { main: '#f8fafc', muted: '#94a3b8' }
+                        }
+                    },
+                    backgroundImage: {
+                        'brand-gradient': 'linear-gradient(135deg, #FF4F87 0%, #7A3FCF 50%, #3F8CFF 100%)',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --color-base: #020617;
+            --color-pink: #FF4F87;
+            --color-purple: #7A3FCF;
+            --color-blue: #3F8CFF;
+        }
+        .tech-pattern {
+            background-color: var(--color-base);
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #FF4F87, #7A3FCF, #3F8CFF);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-16px); }
+        }
+        .animate-float { animation: float 5s ease-in-out infinite; }
+    </style>
+</head>
+
+<body class="bg-brand-base text-brand-text-main font-sans antialiased tech-pattern min-h-screen flex flex-col items-center justify-center px-6">
+
+    <!-- Glow decorativo -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-purple/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="relative z-10 text-center max-w-lg">
+
+        <!-- Icono animado -->
+        <div class="animate-float mb-8 inline-flex">
+            <div class="w-28 h-28 bg-brand-surface border border-white/10 rounded-3xl flex items-center justify-center shadow-2xl shadow-brand-purple/20">
+                <span class="text-5xl font-black text-gradient">404</span>
+            </div>
+        </div>
+
+        <h1 class="text-4xl font-black text-white mb-4">
+            Página <span class="text-gradient">no encontrada</span>
+        </h1>
+        <p class="text-brand-text-muted text-lg font-light leading-relaxed mb-10">
+            La URL que buscas no existe o fue movida.<br>
+            Pero nuestros sistemas siguen funcionando perfectamente.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/"
+                class="px-8 py-4 bg-brand-gradient text-white font-bold rounded-xl shadow-xl shadow-brand-purple/20 transition-all hover:-translate-y-1 text-center">
+                <i class="fa-solid fa-house mr-2" aria-hidden="true"></i>Volver al inicio
+            </a>
+            <a href="/#contacto"
+                class="px-8 py-4 bg-brand-surface border border-white/10 hover:border-white/30 text-white font-medium rounded-xl transition-all hover:bg-brand-highlight text-center">
+                <i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>Contactar
+            </a>
+        </div>
+
+        <!-- Logo -->
+        <div class="mt-16 flex justify-center opacity-40 hover:opacity-70 transition-opacity">
+            <img src="logo.png" alt="DORKAS" class="h-10 w-auto object-contain">
+        </div>
+    </div>
+
+</body>
+
+</html>

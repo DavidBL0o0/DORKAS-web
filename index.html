@@ -10,6 +10,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="icon" href="logo.png" type="image/png">
+    <meta name="description" content="DORKAS — Infraestructura digital a medida para empresas industriales, agrícolas, clínicas y de transporte. Control operativo 100% a tu medida.">
+    <meta name="keywords" content="sistemas ERP, software industrial, Chile, gestión empresarial, contratos, inventario, flota, manufactura">
+    <meta name="author" content="DORKAS SpA">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dorkas.cl/">
+    <meta property="og:title" content="DORKAS | Infraestructura Digital">
+    <meta property="og:description" content="Sistemas modulares de gestión: contratos, flotas, inventarios, análisis y más. Hecho a medida para tu empresa.">
+    <meta property="og:image" content="https://dorkas.cl/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DORKAS | Infraestructura Digital">
+    <meta name="twitter:description" content="Plataformas operativas a medida para industria, transporte, clínicas y más.">
+    <link rel="canonical" href="https://dorkas.cl/">
+    <meta name="description" content="DORKAS — Infraestructura digital a medida para empresas industriales, agrícolas, clínicas y de transporte. Control operativo 100% a tu medida.">
+    <meta name="keywords" content="sistemas ERP, software industrial, Chile, gestión empresarial, contratos, inventario, flota, manufactura">
+    <meta name="author" content="DORKAS SpA">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dorkas.cl/">
+    <meta property="og:title" content="DORKAS | Infraestructura Digital">
+    <meta property="og:description" content="Sistemas modulares de gestión: contratos, flotas, inventarios, análisis y más. Hecho a medida para tu empresa.">
+    <meta property="og:image" content="https://dorkas.cl/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DORKAS | Infraestructura Digital">
+    <meta name="twitter:description" content="Plataformas operativas a medida para industria, transporte, clínicas y más.">
+    <link rel="canonical" href="https://dorkas.cl/">
     <script>
         tailwind.config = {
             theme: {
@@ -56,6 +82,22 @@
         }
     </script>
     <style>
+        :root {
+            --color-base: #020617;
+            --color-surface: #0f172a;
+            --color-highlight: #1e293b;
+            --color-pink: #FF4F87;
+            --color-purple: #7A3FCF;
+            --color-blue: #3F8CFF;
+        }
+        :root {
+            --color-base: #020617;
+            --color-surface: #0f172a;
+            --color-highlight: #1e293b;
+            --color-pink: #FF4F87;
+            --color-purple: #7A3FCF;
+            --color-blue: #3F8CFF;
+        }
         /* Patrón de fondo más profesional (puntos en lugar de cuadrícula) */
         .tech-pattern {
             background-color: #020617;
@@ -163,6 +205,16 @@
         #mobile-menu.active {
             transform: translateX(0);
         }
+
+        /* Evitar scrollbar en galerias */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 
@@ -203,7 +255,7 @@
             setTimeout(function () {
                 const splash = document.getElementById('splash-screen');
                 splash.classList.add('splash-hidden');
-            }, 800); // El logo se mantiene 0.8 segundos antes de desvanecerse
+            }, 340); // El logo se mantiene 0.4 segundos antes de desvanecerse
         });
     </script>
     <!-- === FIN SPLASH SCREEN === -->
@@ -234,8 +286,8 @@
 
             <!-- Menú Escritorio -->
             <div class="hidden md:flex gap-8 text-sm font-semibold tracking-wide text-brand-text-muted">
-                <a href="#proyectos"
-                    class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SISTEMAS</a>
+                <a href="#industrias"
+                    class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">SOLUCIONES</a>
                 <a href="#metodologia"
                     class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-purple">METODOLOGÍA</a>
                 <!-- <a href="#equipo"
@@ -261,8 +313,8 @@
     <div id="mobile-menu"
         class="fixed inset-0 z-[55] bg-brand-base flex flex-col items-center justify-center gap-8 md:hidden">
         <div class="absolute inset-0 bg-brand-gradient opacity-5 blur-[100px] pointer-events-none"></div>
-        <a href="#proyectos" onclick="closeMobileMenu()"
-            class="text-3xl font-black text-white hover:text-brand-blue transition-colors">SISTEMAS</a>
+        <a href="#industrias" onclick="closeMobileMenu()"
+            class="text-3xl font-black text-white hover:text-brand-blue transition-colors">SOLUCIONES</a>
         <a href="#metodologia" onclick="closeMobileMenu()"
             class="text-3xl font-black text-white hover:text-brand-purple transition-colors">METODOLOGÍA</a>
         <!-- <a href="#equipo" onclick="closeMobileMenu()"
@@ -341,7 +393,8 @@
 
                     <p
                         class="text-lg md:text-2xl text-brand-text-muted font-light leading-relaxed mb-10 border-l-4 border-brand-gradient pl-6 max-w-2xl">
-                        Convertimos tu Google Workspace en una <strong class="text-white">maquinaria de datos</strong>.
+                        Optimizamos la gestión empresarial mediante plataformas que unifican procesos y resuelven
+                        desafíos críticos.<br>
                         Contratos, flotas y auditorías bajo una estructura fija, económica y escalable.
                     </p>
 
@@ -350,9 +403,9 @@
                             class="px-8 sm:px-10 py-4 sm:py-5 bg-brand-gradient hover:bg-brand-gradient-hover text-white font-bold rounded-xl shadow-2xl shadow-brand-purple/20 transition-all transform hover:-translate-y-1 text-center text-base sm:text-lg">
                             Agendar Demo
                         </a>
-                        <a href="#proyectos"
+                        <a href="#industrias"
                             class="px-8 sm:px-10 py-4 sm:py-5 bg-brand-surface border border-white/10 hover:border-white/30 text-white font-medium rounded-xl transition-all hover:bg-brand-highlight text-center text-base sm:text-lg">
-                            Ver Catálogo
+                            Ver Soluciones
                         </a>
                     </div>
                 </div>
@@ -388,6 +441,332 @@
         </div>
     </header>
 
+    <!-- Industrias Section -->
+    <section id="industrias" class="relative z-10 py-32 border-y border-white/5 bg-brand-base">
+        <div class="max-w-[1920px] mx-auto px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-16 text-center max-w-3xl mx-auto">
+                    <span class="text-brand-pink font-bold text-xs tracking-widest uppercase block mb-4">Adaptabilidad
+                        Múltiple</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Soluciones por Industria</h2>
+                    <p class="text-brand-text-muted text-lg font-light leading-relaxed">
+                        Nuestros sistemas se adaptan a los conceptos de negocio y operación de diversas áreas,
+                        optimizando
+                        de manera especializada:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Logística -->
+                    <div
+                        class="glass-panel rounded-2xl border border-white/5 hover:border-brand-blue/30 transition-all hover:-translate-y-1 flex flex-col overflow-hidden group">
+                        <div class="h-40 w-full relative bg-transparent">
+                            <div
+                                class="absolute inset-0 overflow-hidden rounded-t-2xl [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]">
+                                <img loading="lazy" src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=600"
+                                    class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105"
+                                    alt="Logística">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent pointer-events-none">
+                                </div>
+                            </div>
+                            <div
+                                class="absolute -bottom-6 left-6 w-12 h-12 rounded-xl bg-brand-blue/20 flex items-center justify-center backdrop-blur-md border border-brand-blue/30 z-10 shadow-lg group-hover:-translate-y-1 transition-transform">
+                                <i class="fa-solid fa-box text-brand-blue text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-8 pt-10 flex-1 flex flex-col relative z-20 bg-transparent">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-blue transition-colors">
+                                Logística y Bodegaje</h3>
+                            <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">Gestión de inventarios
+                                y despacho en tiempo real.</p>
+
+                            <!-- Exanded Links (CSS Grid Animation) -->
+                            <div
+                                class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out mt-auto cursor-default">
+                                <div class="overflow-hidden">
+                                    <div class="flex flex-col gap-2 pt-4 border-t border-white/5 mt-4">
+
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-brand-pink/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-brand-pink/20 shrink-0 group-hover/link:bg-brand-pink/10 transition-colors">
+                                                <i class="fa-solid fa-chart-pie text-brand-pink text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Análisis
+                                                de Costo</span>
+                                        </a>
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-green-500/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-green-500/20 shrink-0 group-hover/link:bg-green-500/10 transition-colors">
+                                                <i class="fa-solid fa-screwdriver-wrench text-green-500 text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Panel
+                                                de Mantención</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agrícola -->
+                    <div
+                        class="glass-panel rounded-2xl border border-white/5 hover:border-green-500/30 transition-all hover:-translate-y-1 flex flex-col overflow-hidden group">
+                        <div class="h-40 w-full relative bg-transparent">
+                            <div
+                                class="absolute inset-0 overflow-hidden rounded-t-2xl [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]">
+                                <img loading="lazy" src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&q=80&w=600"
+                                    class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105"
+                                    alt="Agrícola">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent pointer-events-none">
+                                </div>
+                            </div>
+                            <div
+                                class="absolute -bottom-6 left-6 w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center backdrop-blur-md border border-green-500/30 z-10 shadow-lg group-hover:-translate-y-1 transition-transform">
+                                <i class="fa-solid fa-tractor text-green-500 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-8 pt-10 flex-1 flex flex-col relative z-20 bg-transparent">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green-500 transition-colors">
+                                Agrícola</h3>
+                            <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">Control de faenas,
+                                insumos y trazabilidad.</p>
+
+                            <!-- Exanded Links (CSS Grid Animation) -->
+                            <div
+                                class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out mt-auto cursor-default">
+                                <div class="overflow-hidden">
+                                    <div class="flex flex-col gap-2 pt-4 border-t border-white/5 mt-4">
+
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-brand-purple/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-brand-purple/20 shrink-0 group-hover/link:bg-brand-purple/10 transition-colors">
+                                                <i class="fa-solid fa-bolt text-brand-purple text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Cotizador
+                                                Rápido</span>
+                                        </a>
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-brand-pink/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-brand-pink/20 shrink-0 group-hover/link:bg-brand-pink/10 transition-colors">
+                                                <i class="fa-solid fa-chart-pie text-brand-pink text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Análisis
+                                                de Costo</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rent-a-Car -->
+                    <div
+                        class="glass-panel rounded-2xl border border-white/5 hover:border-brand-pink/30 transition-all hover:-translate-y-1 flex flex-col overflow-hidden group">
+                        <div class="h-40 w-full relative bg-transparent">
+                            <div
+                                class="absolute inset-0 overflow-hidden rounded-t-2xl [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]">
+                                <img loading="lazy" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=600"
+                                    class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105"
+                                    alt="Rent-a-Car">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent pointer-events-none">
+                                </div>
+                            </div>
+                            <div
+                                class="absolute -bottom-6 left-6 w-12 h-12 rounded-xl bg-brand-pink/20 flex items-center justify-center backdrop-blur-md border border-brand-pink/30 z-10 shadow-lg group-hover:-translate-y-1 transition-transform">
+                                <i class="fa-solid fa-car text-brand-pink text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-8 pt-10 flex-1 flex flex-col relative z-20 bg-transparent">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-pink transition-colors">
+                                Rent-a-Car y Transporte</h3>
+                            <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">Administración de
+                                flotas, contratos y mantenimientos.</p>
+
+                            <!-- Exanded Links (CSS Grid Animation) -->
+                            <div
+                                class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out mt-auto cursor-default">
+                                <div class="overflow-hidden">
+                                    <div class="flex flex-col gap-2 pt-4 border-t border-white/5 mt-4">
+
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-brand-blue/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-brand-blue/20 shrink-0 group-hover/link:bg-brand-blue/10 transition-colors">
+                                                <i class="fa-solid fa-file-signature text-brand-blue text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Contratos</span>
+                                        </a>
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-brand-purple/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-brand-purple/20 shrink-0 group-hover/link:bg-brand-purple/10 transition-colors">
+                                                <i class="fa-solid fa-bolt text-brand-purple text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Cotizador
+                                                Rápido</span>
+                                        </a>
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-brand-pink/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-brand-pink/20 shrink-0 group-hover/link:bg-brand-pink/10 transition-colors">
+                                                <i class="fa-solid fa-chart-pie text-brand-pink text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Análisis
+                                                de Costo</span>
+                                        </a>
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-green-500/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-green-500/20 shrink-0 group-hover/link:bg-green-500/10 transition-colors">
+                                                <i class="fa-solid fa-screwdriver-wrench text-green-500 text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Panel
+                                                de Mantención</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clínicas -->
+                    <div
+                        class="glass-panel rounded-2xl border border-white/5 hover:border-brand-purple/30 transition-all hover:-translate-y-1 flex flex-col overflow-hidden group">
+                        <div class="h-40 w-full relative bg-transparent">
+                            <div
+                                class="absolute inset-0 overflow-hidden rounded-t-2xl [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]">
+                                <img loading="lazy" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600"
+                                    class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105"
+                                    alt="Clínicas">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent pointer-events-none">
+                                </div>
+                            </div>
+                            <div
+                                class="absolute -bottom-6 left-6 w-12 h-12 rounded-xl bg-brand-purple/20 flex items-center justify-center backdrop-blur-md border border-brand-purple/30 z-10 shadow-lg group-hover:-translate-y-1 transition-transform">
+                                <i class="fa-solid fa-stethoscope text-brand-purple text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-8 pt-10 flex-1 flex flex-col relative z-20 bg-transparent">
+                            <h3
+                                class="text-xl font-bold text-white mb-3 group-hover:text-brand-purple transition-colors">
+                                Clínicas y Laboratorios</h3>
+                            <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">Agendas pacientes,
+                                fichas y control de facturación.</p>
+
+                            <!-- Exanded Links (CSS Grid Animation) -->
+                            <div
+                                class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out mt-auto cursor-default">
+                                <div class="overflow-hidden">
+                                    <div class="flex flex-col gap-2 pt-4 border-t border-white/5 mt-4">
+
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-brand-blue/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-brand-blue/20 shrink-0 group-hover/link:bg-brand-blue/10 transition-colors">
+                                                <i class="fa-solid fa-file-signature text-brand-blue text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Contratos</span>
+                                        </a>
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-brand-pink/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-brand-pink/20 shrink-0 group-hover/link:bg-brand-pink/10 transition-colors">
+                                                <i class="fa-solid fa-chart-pie text-brand-pink text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Análisis
+                                                de Costo</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manufactura -->
+                    <div
+                        class="glass-panel rounded-2xl border border-white/5 hover:border-yellow-500/30 transition-all hover:-translate-y-1 flex flex-col overflow-hidden group">
+                        <div class="h-40 w-full relative bg-transparent">
+                            <div
+                                class="absolute inset-0 overflow-hidden rounded-t-2xl [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]">
+                                <img loading="lazy" src="Imagenes/industrial_manufacturing.png"
+                                    class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105"
+                                    alt="Manufactura">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent pointer-events-none">
+                                </div>
+                            </div>
+                            <div
+                                class="absolute -bottom-6 left-6 w-12 h-12 rounded-xl bg-yellow-500/20 flex items-center justify-center backdrop-blur-md border border-yellow-500/30 z-10 shadow-lg group-hover:-translate-y-1 transition-transform">
+                                <i class="fa-solid fa-industry text-yellow-500 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-8 pt-10 flex-1 flex flex-col relative z-20 bg-transparent">
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors">
+                                Manufactura</h3>
+                            <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">Control preciso de
+                                producción y mermas.</p>
+
+                            <!-- Exanded Links (CSS Grid Animation) -->
+                            <div
+                                class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out mt-auto cursor-default">
+                                <div class="overflow-hidden">
+                                    <div class="flex flex-col gap-2 pt-4 border-t border-white/5 mt-4">
+
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-green-500/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-green-500/20 shrink-0 group-hover/link:bg-green-500/10 transition-colors">
+                                                <i class="fa-solid fa-screwdriver-wrench text-green-500 text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Panel
+                                                de Mantención</span>
+                                        </a>
+                                        <a href="#proyectos"
+                                            class="flex items-center gap-4 p-3 rounded-xl bg-black/20 hover:bg-black/40 border border-white/5 hover:border-brand-pink/30 shadow-sm transition-all group/link cursor-pointer">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center border border-brand-pink/20 shrink-0 group-hover/link:bg-brand-pink/10 transition-colors">
+                                                <i class="fa-solid fa-chart-pie text-brand-pink text-xs"></i>
+                                            </div>
+                                            <span
+                                                class="text-sm font-bold text-brand-text-muted group-hover/link:text-white transition-colors">Análisis
+                                                de Costo</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 flex justify-center">
+                    <a href="#proyectos"
+                        class="inline-flex items-center gap-3 px-8 py-4 bg-brand-gradient hover:bg-brand-gradient-hover text-white font-bold rounded-xl shadow-2xl shadow-brand-purple/20 transition-all transform hover:-translate-y-1 text-base">
+                        <span>Ver Soluciones</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+    </section>
+
     <!-- Services Section (ACTUALIZADA CON MEDIA) -->
     <section id="proyectos" class="relative z-10 py-32 border-y border-white/5 bg-brand-base">
         <div class="max-w-[1920px] mx-auto px-6">
@@ -412,7 +791,7 @@
                     class="group relative bg-brand-surface rounded-2xl overflow-hidden border border-white/5 hover:border-brand-pink/50 transition-all duration-300 hover:shadow-2xl hover:shadow-brand-pink/10 flex flex-col">
                     <!-- MEDIA CONTAINER -->
                     <div id="analisis-preview"
-                        class="relative h-48 w-full overflow-hidden bg-brand-base cursor-pointer">
+                        class="relative h-48 w-full overflow-hidden bg-brand-base cursor-pointer [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]">
                         <div class="absolute top-4 right-4 z-20">
                             <span
                                 class="bg-brand-pink text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg tracking-wider">TOP
@@ -423,11 +802,10 @@
                             <i
                                 class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
+                        <img loading="lazy" src="Videos Ejemplos/Analisis de Costo - Video Project 8/Analisis de Costo - 1.png"
                             alt="Demo Análisis de Costo"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                         <!-- Gradient Overlay Bottom -->
-                        <div class="absolute bottom-0 left-0 w-full h-16 bg-card-overlay z-10"></div>
                     </div>
 
                     <div class="p-8 pt-4 flex-1 flex flex-col relative z-20">
@@ -458,14 +836,13 @@
                     class="group relative bg-brand-surface rounded-2xl overflow-hidden border border-white/5 hover:border-brand-blue/50 transition-all duration-300 flex flex-col hover:-translate-y-1">
                     <!-- MEDIA CONTAINER -->
                     <div id="contratos-preview"
-                        class="relative h-48 w-full overflow-hidden bg-brand-base cursor-pointer">
+                        class="relative h-48 w-full overflow-hidden bg-brand-base cursor-pointer [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]">
                         <div
                             class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
                             <i
                                 class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=600"
-                            alt="Demo Contratos"
+                        <img loading="lazy" src="Videos Ejemplos/Contratos - Video Project 6/Contratos - 1.png" alt="Demo Contratos"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                         <div class="absolute bottom-0 left-0 w-full h-16 bg-card-overlay z-10 pointer-events-none">
                         </div>
@@ -499,16 +876,15 @@
                     class="group relative bg-brand-surface rounded-2xl overflow-hidden border border-white/5 hover:border-brand-purple/50 transition-all duration-300 flex flex-col hover:-translate-y-1">
                     <!-- MEDIA CONTAINER -->
                     <div id="cotizador-preview"
-                        class="relative h-48 w-full overflow-hidden bg-brand-base cursor-pointer">
+                        class="relative h-48 w-full overflow-hidden bg-brand-base cursor-pointer [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]">
                         <div
                             class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
                             <i
                                 class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=600"
+                        <img loading="lazy" src="Videos Ejemplos/Cotizador rapido - Video Project 5/Cotizador rapido - 1.png"
                             alt="Demo Cotizador Rápido"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        <div class="absolute bottom-0 left-0 w-full h-16 bg-card-overlay z-10"></div>
                     </div>
 
                     <div class="p-8 pt-4 flex-1 flex flex-col relative z-20">
@@ -538,16 +914,15 @@
                     class="group relative bg-brand-surface rounded-2xl overflow-hidden border border-white/5 hover:border-green-500/50 transition-all duration-300 flex flex-col hover:-translate-y-1">
                     <!-- MEDIA CONTAINER -->
                     <div id="mantencion-preview"
-                        class="relative h-48 w-full overflow-hidden bg-brand-base cursor-pointer">
+                        class="relative h-48 w-full overflow-hidden bg-brand-base cursor-pointer [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]">
                         <div
                             class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
                             <i
                                 class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+                        <img loading="lazy" src="Videos Ejemplos/Panel de mantencion - Video Project 7/Panel de mantencion - 1.png"
                             alt="Demo Panel de Mantención"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        <div class="absolute bottom-0 left-0 w-full h-16 bg-card-overlay z-10"></div>
                     </div>
 
                     <div class="p-8 pt-4 flex-1 flex flex-col relative z-20">
@@ -573,159 +948,47 @@
                     </div>
                 </article>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Methodology Section (DATOS AQUÍ AHORA) -->
-    <section id="metodologia" class="py-32 relative z-10 bg-brand-surface">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
-            <div>
-                <span class="text-brand-blue font-bold text-sm tracking-widest uppercase block mb-6">Filosofía
-                    DORKAS</span>
-                <h2 class="text-5xl font-black text-white mb-8 leading-tight">Sin Licencias.<br><span
-                        class="text-brand-text-muted">Más Control.</span></h2>
-                <div class="w-24 h-2 bg-brand-gradient rounded-full"></div>
-
-                <p class="mt-8 text-base md:text-lg text-brand-text-muted font-light leading-relaxed mb-10">
-                    La mayoría de las empresas fallan implementando software costoso que nadie usa.
-                    Nuestra metodología se basa en herramientas que tus operarios ya tienen en el bolsillo.
-                </p>
-
-                <!-- Datos Integrados aquí -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-brand-base p-5 rounded-xl border border-white/5 flex flex-col justify-center">
-                        <div class="text-4xl font-black text-white mb-1">0%</div>
-                        <div class="text-[10px] text-brand-text-muted uppercase tracking-widest font-bold">Costo
-                            Licencias</div>
-                    </div>
-                    <div class="bg-brand-base p-5 rounded-xl border border-white/5 flex flex-col justify-center">
-                        <div class="text-4xl font-black text-white mb-1">100%</div>
-                        <div class="text-[10px] text-brand-text-muted uppercase tracking-widest font-bold">Propiedad de
-                            Datos</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="space-y-6">
-                <!-- Item 1 -->
-                <div class="glass-panel p-6 rounded-xl flex gap-6 hover:bg-brand-highlight transition-colors">
-                    <div class="w-12 h-12 rounded-lg bg-brand-purple/10 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-layer-group text-brand-purple text-xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-white mb-1">Estructura Fija</h3>
-                        <p class="text-brand-text-muted text-sm">No improvisamos. Implementamos sistemas probados que
-                            ordenan el caos en semanas.</p>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="glass-panel p-6 rounded-xl flex gap-6 hover:bg-brand-highlight transition-colors">
-                    <div class="w-12 h-12 rounded-lg bg-brand-pink/10 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-server text-brand-pink text-xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-white mb-1">Infraestructura Propia</h3>
-                        <p class="text-brand-text-muted text-sm">Todo vive en tu nube de Google. Sin costos ocultos ni
-                            "secuestro" de datos.</p>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="glass-panel p-6 rounded-xl flex gap-6 hover:bg-brand-highlight transition-colors">
-                    <div class="w-12 h-12 rounded-lg bg-brand-blue/10 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-hand-holding-heart text-brand-blue text-xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-white mb-1">Mentalidad de Ayuda</h3>
-                        <p class="text-brand-text-muted text-sm">Diseñamos para el operario real, no para el escritorio.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section - Comentado por solicitud del usuario (Nombres e imágenes) 
-         Backup en equipo_backup.html -->
-    <!-- <section id="equipo" class="py-32 relative z-10 border-t border-white/5 bg-brand-base">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-20 text-center max-w-2xl mx-auto">
-                <span class="text-brand-purple font-bold text-xs tracking-widest uppercase">Liderazgo Técnico</span>
-                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Ingeniería Detrás del Sistema</h2>
-                <p class="text-brand-text-muted font-light">
-                    No somos una agencia. Somos ingenieros aplicando física y ciencia de datos a problemas operativos.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                
-                Sección comentada para ocultar nombres e imágenes personales.
-                El código original se encuentra en equipo_backup.html
-                
-                <!-- Susana -->
-    <!-- <div
-                    class="bg-brand-surface border border-white/5 p-8 rounded-2xl flex flex-col items-center text-center hover:border-brand-pink/50 transition-all group hover:-translate-y-2">
-                    <div
-                        class="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-surface ring-2 ring-brand-pink/50 shadow-2xl mb-8 relative bg-brand-highlight">
-                        <img src="susana.jpg" class="w-full h-full object-cover">
+                <!-- Card 5: Sistema de Pañol -->
+                <article
+                    class="group relative bg-brand-surface rounded-2xl overflow-hidden border border-white/5 hover:border-yellow-500/50 transition-all duration-300 flex flex-col hover:-translate-y-1">
+                    <!-- MEDIA CONTAINER -->
+                    <div id="panol-preview"
+                        class="relative h-48 w-full overflow-hidden bg-brand-base cursor-pointer [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]">
+                        <div
+                            class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10 flex items-center justify-center">
+                            <i
+                                class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 1.png"
+                            alt="Demo Sistema de Pañol"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     </div>
 
-                    <h3 class="text-2xl font-bold text-white mb-2">Susana Jimenez</h3>
-                    <p class="text-brand-pink text-xs font-bold uppercase tracking-wider mb-8">Co-Fundadora &
-                        Operaciones</p>
-
-                    <ul class="space-y-4 text-left w-full max-w-xs mx-auto">
-                        <li class="border-l-2 border-brand-pink/30 pl-4">
-                            <div class="text-white text-sm font-bold leading-tight mb-1">Ing. Mecánica en Mantenimiento
-                                Industrial</div>
-                            <div class="text-brand-text-muted text-xs">Universidad Tecnológica de Chile, INACAP</div>
-                        </li>
-                        <li class="border-l-2 border-brand-pink/30 pl-4">
-                            <div class="text-white text-sm font-bold leading-tight mb-1">Mg. Diseño, Fabricación y
-                                Mantenimiento Aeroespacial</div>
-                            <div class="text-brand-text-muted text-xs">Universidad Rey Juan Carlos, España</div>
-                        </li>
-                        <li class="border-l-2 border-brand-pink/30 pl-4">
-                            <div class="text-white text-sm font-bold leading-tight mb-1">Dipl. Gestión de Activos y
-                                Mantenimiento Industrial</div>
-                            <div class="text-brand-text-muted text-xs">Pontificia Universidad Católica de Chile</div>
-                        </li>
-                    </ul>
-                </div> -->
-
-    <!-- David -->
-    <!-- <div
-                    class="bg-brand-surface border border-white/5 p-8 rounded-2xl flex flex-col items-center text-center hover:border-brand-blue/50 transition-all group hover:-translate-y-2">
-                    <div
-                        class="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-surface ring-2 ring-brand-blue/50 shadow-2xl mb-8 relative bg-brand-highlight">
-                        <img src="david.jpg" class="w-full h-full object-cover">
-                    </div>
-
-                    <h3 class="text-2xl font-bold text-white mb-2">David Basantes</h3>
-                    <p class="text-brand-blue text-xs font-bold uppercase tracking-wider mb-8">Co-Fundador & Data
-                        Science</p>
-
-                    <ul class="space-y-4 text-left w-full max-w-xs mx-auto">
-                        <li class="border-l-2 border-brand-blue/30 pl-4">
-                            <div class="text-white text-sm font-bold leading-tight mb-1">Ingeniería Física</div>
-                            <div class="text-brand-text-muted text-xs">Universidad Andrés Bello (UNAB)</div>
-                        </li>
-                        <li class="border-l-2 border-brand-blue/30 pl-4">
-                            <div class="text-white text-sm font-bold leading-tight mb-1">Licenciatura en Física Aplicada
+                    <div class="p-8 pt-4 flex-1 flex flex-col relative z-20">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-brand-base border border-white/10 flex items-center justify-center text-yellow-500 shrink-0">
+                                <i class="fa-solid fa-boxes-stacked text-lg"></i>
                             </div>
-                            <div class="text-brand-text-muted text-xs">Universidad Andrés Bello</div>
-                        </li>
-                        <li class="border-l-2 border-brand-blue/30 pl-4">
-                            <div class="text-white text-sm font-bold leading-tight mb-1">Especialización en Ciencia de
-                                Datos</div>
-                            <div class="text-brand-text-muted text-xs">Coursera</div>
-                        </li>
-                    </ul>
-                </div> -->
+                            <h3 class="text-2xl font-bold text-white group-hover:text-yellow-500 transition-colors">
+                                Sistema de Pañol</h3>
+                        </div>
+                        <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">
+                            Sistema para realizar órdenes de productos, descontarlos de inventarios y agregar
+                            solicitudes eficientemente.
+                        </p>
+                        <div class="border-t border-white/5 pt-4 flex flex-wrap gap-2 mt-auto">
+                            <span
+                                class="text-[10px] font-bold text-brand-text-muted bg-brand-base px-2 py-1 rounded border border-white/5 uppercase">INVENTARIO</span>
+                            <span
+                                class="text-[10px] font-bold text-brand-text-muted bg-brand-base px-2 py-1 rounded border border-white/5 uppercase">ÓRDENES</span>
+                        </div>
+                    </div>
+                </article>
 
-    </div>
-    </div>
-    </section> -->
+            </div>
+        </div>
+    </section>
 
     <!-- === SECCIÓN DE OPINIONES (GOOGLE MAPS STYLE) === -->
     <section id="opiniones" class="py-32 relative z-10 bg-brand-surface/50 border-t border-white/5">
@@ -733,7 +996,7 @@
             <div class="mb-20 flex flex-col md:flex-row justify-between items-center gap-8">
                 <div class="text-center md:text-left">
                     <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Maps_icon_%282020%29.svg"
+                        <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Maps_icon_%282020%29.svg"
                             class="h-6 w-auto" alt="Google Maps">
                         <span class="text-brand-text-muted font-bold text-xs tracking-widest uppercase">Opiniones en
                             Google Maps</span>
@@ -751,7 +1014,7 @@
                         <span class="text-brand-text-muted text-sm">(1 reseña)</span>
                     </div>
                 </div>
-                <a href="https://maps.google.com" target="_blank"
+                <a href="https://g.page/r/CQZ_pXKyY4FCEAE/review" target="_blank"
                     class="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all text-xs font-bold tracking-widest text-white uppercase group">
                     Escribir Reseña
                 </a>
@@ -772,7 +1035,7 @@
                         <div
                             class="w-24 h-24 rounded-2xl overflow-hidden bg-white p-2 shadow-xl flex items-center justify-center shrink-0 transform -rotate-3 group-hover:rotate-0 transition-transform">
                             <!-- Logo de RentaloChile (Placeholder elegante si no hay imagen directa) -->
-                            <img src="https://rentalochile.cl/wp-content/uploads/2021/04/Logo-Rentalo-Chile-1.png"
+                            <img loading="lazy" src="https://rentalochile.cl/wp-content/uploads/2021/04/Logo-Rentalo-Chile-1.png"
                                 onerror="this.src='https://ui-avatars.com/api/?name=Rentalo+Chile&background=0f172a&color=3f8cff&bold=true'"
                                 class="w-full h-auto object-contain" alt="RentaloChile">
                         </div>
@@ -826,21 +1089,78 @@
                 Agenda una demo de 15 minutos. Sin compromiso. Te muestro cómo funciona todo desde mi celular.
             </p>
 
-            <form class="max-w-md mx-auto space-y-4">
+            <form id="contact-form" class="max-w-md mx-auto space-y-4">
                 <div class="relative group">
-                    <input type="text" placeholder="Tu Nombre"
+                    <input type="text" id="contact-name" placeholder="Tu Nombre/Empresa (Opcional)"
                         class="w-full bg-brand-surface border border-brand-highlight rounded-xl py-4 px-6 text-white placeholder-gray-600 focus:outline-none focus:border-brand-pink transition-colors">
                 </div>
                 <div class="relative group">
-                    <input type="tel" placeholder="Tu WhatsApp (+569...)"
+                    <input type="tel" id="contact-phone" placeholder="Tu WhatsApp (+569...) (Opcional)"
                         class="w-full bg-brand-surface border border-brand-highlight rounded-xl py-4 px-6 text-white placeholder-gray-600 focus:outline-none focus:border-brand-blue transition-colors">
                 </div>
 
+                <div class="mt-8 text-left bg-brand-surface/50 border border-brand-blue/20 p-5 rounded-xl">
+                    <h4 class="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check text-brand-blue"></i> Disponibilidad de Reuniones
+                    </h4>
+                    <ul class="text-brand-text-muted text-[13px] space-y-2">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-video mt-1 text-brand-pink/70"></i>
+                            <span>Reunión Online (Meet/Zoom)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-map-location-dot mt-1 text-brand-purple/70"></i>
+                            <span>Presencial: Los Militares 5620, of 905, 7550000 Las Condes, Región
+                                Metropolitana</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-building-user mt-1 text-brand-blue/70"></i>
+                            <span>Visita a su empresa según coordinación</span>
+                        </li>
+                    </ul>
+                </div>
+
                 <button type="submit"
-                    class="w-full mt-6 bg-brand-gradient text-white font-bold py-5 rounded-xl hover:shadow-2xl hover:shadow-brand-purple/30 transition-all transform hover:-translate-y-1 tracking-wide uppercase text-sm">
-                    Solicitar Demo
+                    class="w-full mt-6 flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-5 rounded-xl shadow-lg hover:shadow-[#25D366]/30 transition-all transform hover:-translate-y-1 tracking-wide uppercase text-sm">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Contactar por WhatsApp
                 </button>
+                <div class="text-center mt-4">
+                    <button type="button" onclick="copyEmailMain()" id="copy-email-main"
+                        class="text-brand-text-muted text-xs hover:text-white transition-colors underline bg-transparent border-none cursor-pointer p-0">O
+                        envíanos un correo a: contacto@dorkas.cl</button>
+                    <script>
+                        function copyEmailMain() {
+                            navigator.clipboard.writeText('contacto@dorkas.cl').then(function () {
+                                const btn = document.getElementById('copy-email-main');
+                                const originalText = btn.innerHTML;
+                                btn.innerHTML = '<i class="fa-solid fa-check text-[#25D366]"></i> ¡Correo copiado a tu portapapeles!';
+                                setTimeout(() => {
+                                    btn.innerHTML = originalText;
+                                }, 2500);
+                            });
+                        }
+                    </script>
+                </div>
             </form>
+
+            <script>
+                document.getElementById('contact-form').addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var name = document.getElementById('contact-name').value.trim();
+                    var phone = document.getElementById('contact-phone').value.trim();
+
+                    var message = "¡Hola! Buenos días. Me interesa obtener más información sobre los servicios de Dorkas. ¿Podrían asesorarme?";
+                    if (name || phone) {
+                        message = "¡Hola!";
+                        if (name) message += " Mi nombre es " + name + ".";
+                        if (phone) message += " (Mi WhatsApp es " + phone + ").";
+                        message += " Buenos días. Me interesa obtener más información sobre los servicios de Dorkas. ¿Podrían asesorarme?";
+                    }
+
+                    var whatsappUrl = "https://wa.me/56930396095?text=" + encodeURIComponent(message);
+                    window.open(whatsappUrl, '_blank');
+                });
+            </script>
         </div>
     </section>
 
@@ -854,11 +1174,22 @@
                     <span class="text-brand-text-muted text-xs border-l border-white/10 pl-3 ml-1">SANTIAGO,
                         CHILE</span>
                 </div>
-                <a href="mailto:contacto@dorkas.cl"
-                    class="text-brand-text-muted hover:text-white transition-colors text-xs flex items-center gap-2 mt-2 md:mt-0 md:border-l md:border-white/10 md:pl-4">
+                <button type="button" onclick="copyEmailFooter()" id="copy-email-footer"
+                    class="text-brand-text-muted hover:text-white transition-colors text-xs flex items-center gap-2 mt-2 md:mt-0 md:border-l md:border-white/10 md:pl-4 bg-transparent border-none cursor-pointer outline-none">
                     <i class="fa-solid fa-envelope text-brand-pink"></i>
-                    contacto@dorkas.cl
-                </a>
+                    <span>contacto@dorkas.cl</span>
+                </button>
+                <script>
+                    function copyEmailFooter() {
+                        navigator.clipboard.writeText('contacto@dorkas.cl').then(function () {
+                            const span = document.querySelector('#copy-email-footer span');
+                            span.innerText = '¡Correo copiado!';
+                            setTimeout(() => {
+                                span.innerText = 'contacto@dorkas.cl';
+                            }, 2500);
+                        });
+                    }
+                </script>
             </div>
             <p class="text-brand-text-muted text-xs">&copy; 2024 DORKAS SpA. Todos los derechos reservados.</p>
             <div class="flex gap-6">
@@ -876,8 +1207,8 @@
     <!-- Modal Video Hero -->
     <div id="modal-hero" class="video-modal" style="display: none;" onclick="closeVideo('modal-hero')">
         <div class="video-modal-content" onclick="event.stopPropagation()">
-            <button class="video-modal-close" onclick="closeVideo('modal-hero')">
-                <i class="fa-solid fa-xmark"></i>
+            <button class="video-modal-close" onclick="closeVideo('modal-hero')" aria-label="Cerrar demostración" aria-label="Cerrar demostración">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
             <video id="video-hero" class="w-full h-auto rounded-xl shadow-2xl" controls controlsList="nodownload">
                 <source src="Videos Ejemplos/DORKAS - Ejemplo.mp4" type="video/mp4">
@@ -886,66 +1217,416 @@
         </div>
     </div>
 
-    <!-- Modal Video Análisis de Costo -->
+    <!-- Modal Gallery modal-analisis -->
+
     <div id="modal-analisis" class="video-modal" style="display: none;" onclick="closeVideo('modal-analisis')">
-        <div class="video-modal-content" onclick="event.stopPropagation()">
-            <button class="video-modal-close" onclick="closeVideo('modal-analisis')">
-                <i class="fa-solid fa-xmark"></i>
+        <div class="video-modal-content bg-brand-surface rounded-2xl border border-white/10 overflow-hidden"
+            onclick="event.stopPropagation()">
+            <button class="video-modal-close" onclick="closeVideo('modal-analisis')" aria-label="Cerrar demostración" aria-label="Cerrar demostración">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
-            <video id="video-analisis" class="w-full h-auto rounded-xl shadow-2xl" controls controlsList="nodownload">
-                <source src="Videos Ejemplos/Analisis de Costo - Video Project 8.mp4" type="video/mp4">
-                Tu navegador no soporta video HTML5.
-            </video>
+            <div class="relative w-full">
+                <!-- Gallery Container -->
+                <div id="gallery-modal-analisis"
+                    class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide w-full scroll-smooth">
+
+                    <!-- Video as first item -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <video class="w-full max-h-[70vh] rounded-xl shadow-2xl object-cover" controls
+                            controlsList="nodownload">
+                            <source src="Videos Ejemplos/Analisis de Costo - Video Project 8.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
+                    </div>
+                    <!-- Image 1 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Analisis de Costo - Video Project 8/Analisis de Costo - 1.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 1">
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Analisis de Costo - Video Project 8/Analisis de Costo - 2.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 2">
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button onclick="scrollGallery('gallery-modal-analisis', -1)"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-brand-pink text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-colors border border-white/10 z-20" aria-label="Elemento anterior">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button onclick="scrollGallery('gallery-modal-analisis', 1)"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-brand-pink text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-colors border border-white/10 z-20" aria-label="Elemento siguiente">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <!-- Indicators -->
+                <div
+                    class="gallery-indicators absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-black/30 px-3 py-2 rounded-full backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-pink"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Modal Video Contratos -->
+    <!-- Modal Gallery modal-contratos -->
+
     <div id="modal-contratos" class="video-modal" style="display: none;" onclick="closeVideo('modal-contratos')">
-        <div class="video-modal-content" onclick="event.stopPropagation()">
-            <button class="video-modal-close" onclick="closeVideo('modal-contratos')">
-                <i class="fa-solid fa-xmark"></i>
+        <div class="video-modal-content bg-brand-surface rounded-2xl border border-white/10 overflow-hidden"
+            onclick="event.stopPropagation()">
+            <button class="video-modal-close" onclick="closeVideo('modal-contratos')" aria-label="Cerrar demostración" aria-label="Cerrar demostración">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
-            <video id="video-contratos" class="w-full h-auto rounded-xl shadow-2xl" controls controlsList="nodownload">
-                <source src="Videos Ejemplos/Contratos - Video Project 6.mp4" type="video/mp4">
-                Tu navegador no soporta video HTML5.
-            </video>
+            <div class="relative w-full">
+                <!-- Gallery Container -->
+                <div id="gallery-modal-contratos"
+                    class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide w-full scroll-smooth">
+
+                    <!-- Video as first item -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <video class="w-full max-h-[70vh] rounded-xl shadow-2xl object-cover" controls
+                            controlsList="nodownload">
+                            <source src="Videos Ejemplos/Contratos - Video Project 6.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
+                    </div>
+                    <!-- Image 1 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Contratos - Video Project 6/Contratos - 1.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 1">
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Contratos - Video Project 6/Contratos - 2.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 2">
+                    </div>
+                    <!-- Image 3 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Contratos - Video Project 6/Contratos - 3.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 3">
+                    </div>
+                    <!-- Image 4 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Contratos - Video Project 6/Contratos - 4.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 4">
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button onclick="scrollGallery('gallery-modal-contratos', -1)"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-brand-pink text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-colors border border-white/10 z-20" aria-label="Elemento anterior">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button onclick="scrollGallery('gallery-modal-contratos', 1)"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-brand-pink text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-colors border border-white/10 z-20" aria-label="Elemento siguiente">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <!-- Indicators -->
+                <div
+                    class="gallery-indicators absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-black/30 px-3 py-2 rounded-full backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-pink"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Modal Video Cotizador Rápido -->
+    <!-- Modal Gallery modal-cotizador -->
+
     <div id="modal-cotizador" class="video-modal" style="display: none;" onclick="closeVideo('modal-cotizador')">
-        <div class="video-modal-content" onclick="event.stopPropagation()">
-            <button class="video-modal-close" onclick="closeVideo('modal-cotizador')">
-                <i class="fa-solid fa-xmark"></i>
+        <div class="video-modal-content bg-brand-surface rounded-2xl border border-white/10 overflow-hidden"
+            onclick="event.stopPropagation()">
+            <button class="video-modal-close" onclick="closeVideo('modal-cotizador')" aria-label="Cerrar demostración" aria-label="Cerrar demostración">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
-            <video id="video-cotizador" class="w-full h-auto rounded-xl shadow-2xl" controls controlsList="nodownload">
-                <source src="Videos Ejemplos/Cotizador rapido - Video Project 5.mp4" type="video/mp4">
-                Tu navegador no soporta video HTML5.
-            </video>
+            <div class="relative w-full">
+                <!-- Gallery Container -->
+                <div id="gallery-modal-cotizador"
+                    class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide w-full scroll-smooth">
+
+                    <!-- Video as first item -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <video class="w-full max-h-[70vh] rounded-xl shadow-2xl object-cover" controls
+                            controlsList="nodownload">
+                            <source src="Videos Ejemplos/Cotizador rapido - Video Project 5.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
+                    </div>
+                    <!-- Image 1 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Cotizador rapido - Video Project 5/Cotizador rapido - 1.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 1">
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Cotizador rapido - Video Project 5/Cotizador rapido - 2.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 2">
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button onclick="scrollGallery('gallery-modal-cotizador', -1)"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-brand-pink text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-colors border border-white/10 z-20" aria-label="Elemento anterior">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button onclick="scrollGallery('gallery-modal-cotizador', 1)"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-brand-pink text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-colors border border-white/10 z-20" aria-label="Elemento siguiente">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <!-- Indicators -->
+                <div
+                    class="gallery-indicators absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-black/30 px-3 py-2 rounded-full backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-pink"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Modal Video Panel de Mantención -->
+    <!-- Modal Gallery modal-mantencion -->
+
     <div id="modal-mantencion" class="video-modal" style="display: none;" onclick="closeVideo('modal-mantencion')">
-        <div class="video-modal-content" onclick="event.stopPropagation()">
-            <button class="video-modal-close" onclick="closeVideo('modal-mantencion')">
-                <i class="fa-solid fa-xmark"></i>
+        <div class="video-modal-content bg-brand-surface rounded-2xl border border-white/10 overflow-hidden"
+            onclick="event.stopPropagation()">
+            <button class="video-modal-close" onclick="closeVideo('modal-mantencion')" aria-label="Cerrar demostración" aria-label="Cerrar demostración">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
-            <video id="video-mantencion" class="w-full h-auto rounded-xl shadow-2xl" controls controlsList="nodownload">
-                <source src="Videos Ejemplos/Panel de mantencion - Video Project 7.mp4" type="video/mp4">
-                Tu navegador no soporta video HTML5.
-            </video>
+            <div class="relative w-full">
+                <!-- Gallery Container -->
+                <div id="gallery-modal-mantencion"
+                    class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide w-full scroll-smooth">
+
+                    <!-- Video as first item -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <video class="w-full max-h-[70vh] rounded-xl shadow-2xl object-cover" controls
+                            controlsList="nodownload">
+                            <source src="Videos Ejemplos/Panel de mantencion - Video Project 7.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
+                    </div>
+                    <!-- Image 1 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Panel de mantencion - Video Project 7/Panel de mantencion - 1.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 1">
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Panel de mantencion - Video Project 7/Panel de mantencion - 2.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 2">
+                    </div>
+                    <!-- Image 3 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Panel de mantencion - Video Project 7/Panel de mantencion - 3.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 3">
+                    </div>
+                    <!-- Image 4 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Panel de mantencion - Video Project 7/Panel de mantencion - 4.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 4">
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button onclick="scrollGallery('gallery-modal-mantencion', -1)"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-brand-pink text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-colors border border-white/10 z-20" aria-label="Elemento anterior">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button onclick="scrollGallery('gallery-modal-mantencion', 1)"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-brand-pink text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-colors border border-white/10 z-20" aria-label="Elemento siguiente">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <!-- Indicators -->
+                <div
+                    class="gallery-indicators absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-black/30 px-3 py-2 rounded-full backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-pink"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Gallery modal-panol -->
+
+    <div id="modal-panol" class="video-modal" style="display: none;" onclick="closeVideo('modal-panol')">
+        <div class="video-modal-content bg-brand-surface rounded-2xl border border-white/10 overflow-hidden"
+            onclick="event.stopPropagation()">
+            <button class="video-modal-close" onclick="closeVideo('modal-panol')" aria-label="Cerrar demostración" aria-label="Cerrar demostración">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="relative w-full">
+                <!-- Gallery Container -->
+                <div id="gallery-modal-panol"
+                    class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide w-full scroll-smooth">
+
+                    <!-- Video as first item -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <video class="w-full max-h-[70vh] rounded-xl shadow-2xl object-cover" controls
+                            controlsList="nodownload">
+                            <source src="Videos Ejemplos/Sistema de pañol - Video Project 8.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
+                    </div>
+                    <!-- Image 1 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 1.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 1">
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 2.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 2">
+                    </div>
+                    <!-- Image 3 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 3.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 3">
+                    </div>
+                    <!-- Image 4 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 4.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 4">
+                    </div>
+                    <!-- Image 5 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 6.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 6">
+                    </div>
+                    <!-- Image 6 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 7.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 7">
+                    </div>
+                    <!-- Image 7 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 8.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 8">
+                    </div>
+                    <!-- Image 8 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 9.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 9">
+                    </div>
+                    <!-- Image 9 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 11.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 11">
+                    </div>
+                    <!-- Image 10 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 12.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 12">
+                    </div>
+                    <!-- Image 11 -->
+                    <div class="gallery-item min-w-full shrink-0 flex items-center justify-center p-4 snap-center">
+                        <img loading="lazy" src="Videos Ejemplos/Sistema de pañol - Video Project 8/Sistema de pañol - 13.png"
+                            class="max-w-full max-h-[70vh] rounded-xl shadow-2xl object-contain" alt="Captura 13">
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button onclick="scrollGallery('gallery-modal-panol', -1)"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-brand-pink text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-colors border border-white/10 z-20" aria-label="Elemento anterior">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button onclick="scrollGallery('gallery-modal-panol', 1)"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-brand-pink text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-colors border border-white/10 z-20" aria-label="Elemento siguiente">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <!-- Indicators -->
+                <div
+                    class="gallery-indicators absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-black/30 px-3 py-2 rounded-full backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-pink"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span><span
+                        class="w-2 h-2 rounded-full bg-white/30"></span>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
         // Funciones Globales Simples
+        function initGalleryIndicators() {
+            const modals = document.querySelectorAll('.video-modal');
+            modals.forEach(modal => {
+                const gallery = modal.querySelector('[id^="gallery-"]');
+                const indicatorsContainer = modal.querySelector('.gallery-indicators');
+                if (!gallery || !indicatorsContainer) return;
+
+                const items = gallery.querySelectorAll('.gallery-item');
+                const dots = indicatorsContainer.querySelectorAll('span');
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const index = Array.from(items).indexOf(entry.target);
+                            dots.forEach((dot, i) => {
+                                if (i === index) {
+                                    dot.className = 'w-2 h-2 rounded-full bg-brand-pink transition-colors';
+                                } else {
+                                    dot.className = 'w-2 h-2 rounded-full bg-white/30 transition-colors';
+                                }
+                            });
+                        }
+                    });
+                }, {
+                    root: gallery,
+                    threshold: 0.5
+                });
+
+                items.forEach(item => observer.observe(item));
+            });
+        }
+
+        // Inicializar indicadores al cargar
+        document.addEventListener('DOMContentLoaded', initGalleryIndicators);
+
+        function scrollGallery(galleryId, direction) {
+            const gallery = document.getElementById(galleryId);
+            const scrollAmount = gallery.clientWidth;
+            gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
         function openVideo(modalId) {
             var modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.style.display = 'flex';
+            // Reset galería al primer slide (video)
+            var gallery = modal.querySelector('[id^="gallery-"]');
+            if (gallery) {
+                gallery.scrollLeft = 0;
+                // Activar primera viñeta
+                var dots = modal.querySelectorAll('.gallery-indicators span');
+                dots.forEach(function(dot, i) {
+                    dot.className = i === 0
+                        ? 'w-2 h-2 rounded-full bg-brand-pink transition-colors'
+                        : 'w-2 h-2 rounded-full bg-white/30 transition-colors';
+                });
+            }
+            // Reproducir video automáticamente
             var video = modal.querySelector('video');
-            if (modal && video) {
-                modal.style.display = 'flex';
-                video.play().catch(function (e) { console.log("Error playing video managed by browser restriction or error:", e); });
+            if (video) {
+                video.play().catch(function(e) { console.log('Video autoplay bloqueado:', e); });
             }
         }
 
@@ -989,6 +1670,12 @@
             var mantencionBtn = document.getElementById('mantencion-preview');
             if (mantencionBtn) {
                 mantencionBtn.onclick = function () { openVideo('modal-mantencion'); };
+            }
+
+            // Asignar click a Sistema de Pañol
+            var panolBtn = document.getElementById('panol-preview');
+            if (panolBtn) {
+                panolBtn.onclick = function () { openVideo('modal-panol'); };
             }
         });
     </script>
