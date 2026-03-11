@@ -317,7 +317,7 @@
         class="fixed inset-0 z-[100] bg-brand-base flex flex-col items-center justify-center transition-opacity duration-1000 ease-out">
         <!-- Decoración de fondo del splash -->
         <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-purple/10 rounded-full blur-[100px] pointer-events-none">
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-brand-purple/10 rounded-full blur-[60px] md:blur-[100px] pointer-events-none">
         </div>
 
         <div class="relative z-10 text-center animate-pulse-slow">
@@ -389,6 +389,8 @@
                     class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-pink">EQUIPO</a> -->
                 <a href="#opiniones"
                     class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-blue">OPINIONES</a>
+                <a href="#contacto"
+                    class="hover:text-white transition-colors py-2 border-b-2 border-transparent hover:border-brand-pink">CONTACTO</a>
             </div>
 
             <a href="#contacto"
@@ -418,6 +420,8 @@
             class="text-3xl font-black text-white hover:text-brand-pink transition-colors">EQUIPO</a> -->
         <a href="#opiniones" onclick="closeMobileMenu()"
             class="text-3xl font-black text-white hover:text-brand-blue transition-colors">OPINIONES</a>
+        <a href="#contacto" onclick="closeMobileMenu()"
+            class="text-3xl font-black text-white hover:text-brand-pink transition-colors">CONTACTO</a>
         <a href="#contacto" onclick="closeMobileMenu()"
             class="mt-4 px-10 py-4 bg-brand-gradient text-white rounded-xl font-bold text-lg">INICIAR PROYECTO</a>
     </div>
@@ -457,10 +461,10 @@
     <header class="relative pt-40 pb-20 px-6 max-w-[1920px] mx-auto z-10">
         <!-- Decoración de Fondo (Spots de luz sutiles) -->
         <div
-            class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none">
+            class="absolute top-0 right-0 w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-brand-blue/5 rounded-full blur-[80px] md:blur-[120px] pointer-events-none">
         </div>
         <div
-            class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-purple/5 rounded-full blur-[100px] pointer-events-none">
+            class="absolute bottom-0 left-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-brand-purple/5 rounded-full blur-[60px] md:blur-[100px] pointer-events-none">
         </div>
 
         <div class="max-w-7xl mx-auto relative">
@@ -483,22 +487,27 @@
 
                     <h1
                         class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-6 md:mb-8 leading-[1] md:leading-[0.95]">
-                        CONTROL<br class="hidden sm:block">
-                        OPERATIVO<br>
-                        <span class="text-gradient">100% A TU MEDIDA.</span>
+                        ELIMINA LOS CUELLOS<br class="hidden sm:block">
+                        DE BOTELLA<br>
+                        <span class="text-gradient">DE TU OPERACIÓN.</span>
                     </h1>
 
                     <p
                         class="text-lg md:text-2xl text-brand-text-muted font-light leading-relaxed mb-10 border-l-4 border-brand-gradient pl-6 max-w-2xl">
-                        Optimizamos la gestión empresarial mediante plataformas que unifican procesos y resuelven
-                        desafíos críticos.<br>
-                        Contratos, flotas y auditorías bajo una estructura fija, económica y escalable.
+                        Centralizamos contratos, inventarios y flotas en una única infraestructura digital.<br>
+                        Deja atrás el caos de los archivos descentralizados y toma el control en tiempo real de tu
+                        empresa.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 sm:gap-5">
-                        <a href="#contacto"
+                        <!-- <a href="#contacto"
                             class="px-8 sm:px-10 py-4 sm:py-5 bg-brand-gradient hover:bg-brand-gradient-hover text-white font-bold rounded-xl shadow-2xl shadow-brand-purple/20 transition-all transform hover:-translate-y-1 text-center text-base sm:text-lg">
-                            Agendar Demo
+                            Agendar Reunión
+                        </a> -->
+                        <a href="https://calendar.app.google/Ymoc8wPqkUELx7DU9" target="_blank"
+                            rel="noopener noreferrer"
+                            class="px-8 sm:px-10 py-4 sm:py-5 bg-brand-gradient hover:bg-brand-gradient-hover text-white font-bold rounded-xl shadow-2xl shadow-brand-purple/20 transition-all transform hover:-translate-y-1 text-center text-base sm:text-lg flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-calendar-check"></i> Agendar Reunión
                         </a>
                         <a href="#industrias"
                             class="px-8 sm:px-10 py-4 sm:py-5 bg-brand-surface border border-white/10 hover:border-white/30 text-white font-medium rounded-xl transition-all hover:bg-brand-highlight text-center text-base sm:text-lg">
@@ -510,7 +519,7 @@
                 <!-- Columna Derecha: Mockup Celular con Video (1 min) -->
                 <div class="md:col-span-5 flex justify-center md:justify-end h-full items-center pt-8 md:pt-0">
                     <div id="hero-video-mockup"
-                        class="phone-mockup w-[300px] h-[600px] animate-float relative group cursor-pointer shadow-2xl shadow-brand-blue/10">
+                        class="phone-mockup w-[260px] sm:w-[300px] h-[520px] sm:h-[600px] animate-float relative group cursor-pointer shadow-2xl shadow-brand-blue/10">
                         <div class="phone-notch"></div>
 
                         <!-- Video Container / Placeholder -->
@@ -945,7 +954,6 @@
                                 class="fa-solid fa-circle-play text-white/80 text-4xl drop-shadow-lg group-hover:scale-110 transition-transform"></i>
                         </div>
                         <img loading="lazy" src="Videos Ejemplos/Contratos - Video Project 6/Contratos - 1.png"
-                            alt="Demo Contratos"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                         <div class="absolute bottom-0 left-0 w-full h-16 bg-card-overlay z-10 pointer-events-none">
                         </div>
@@ -1001,8 +1009,8 @@
                                 Cotizador Rápido</h3>
                         </div>
                         <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">
-                            Herramienta diseñada para realizar cotizaciones comerciales de manera mucho más rápida y
-                            eficiente.
+                            Genera propuestas comerciales precisas en segundos, conectadas directamente a tu stock
+                            actual y estructura de costos.
                         </p>
                         <div class="border-t border-white/5 pt-4 flex flex-wrap gap-2 mt-auto">
                             <span
@@ -1080,8 +1088,8 @@
                                 Sistema de Pañol</h3>
                         </div>
                         <p class="text-brand-text-muted text-sm leading-relaxed mb-6 flex-1">
-                            Sistema para realizar órdenes de productos, descontarlos de inventarios y agregar
-                            solicitudes eficientemente.
+                            Trazabilidad absoluta de tus insumos. Automatiza el descuento de inventario y evita quiebres
+                            de stock en tus faenas.
                         </p>
                         <div class="border-t border-white/5 pt-4 flex flex-wrap gap-2 mt-auto">
                             <span
@@ -1113,7 +1121,7 @@
                 <div
                     class="glass-panel p-10 md:p-12 rounded-3xl border border-white/10 hover:border-brand-blue/50 transition-all flex flex-col relative group">
                     <h3 class="text-3xl font-black text-white mb-2 group-hover:text-brand-blue transition-colors">
-                        Metodologia Base
+                        Implementación Core
                     </h3>
                     <p class="text-brand-text-muted text-sm mb-8">Implementación tecnológica directa y lista para usar.
                     </p>
@@ -1140,9 +1148,14 @@
                             <span class="text-brand-text-main">Informes y reportes KPI</span>
                         </li>
                     </ul>
-                    <a href="#contacto"
+                    <!-- <a href="#contacto"
                         class="w-full py-4 rounded-xl border border-white/10 hover:border-brand-blue/30 hover:bg-white/5 text-center text-white font-bold transition-all">Consultar
-                        Plan</a>
+                        Plan</a> -->
+                    <a href="https://wa.me/56930396095?text=Hola!%20Me%20gustar%C3%ADa%20consultar%20por%20el%20plan%20de%20Implementaci%C3%B3n%20Core."
+                        target="_blank" rel="noopener noreferrer"
+                        class="w-full py-4 rounded-xl border border-white/10 hover:border-brand-blue/30 hover:bg-white/5 text-center text-white font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Consultar Plan
+                    </a>
                 </div>
 
                 <!-- Mensual -->
@@ -1152,13 +1165,13 @@
                         class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-gradient text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg whitespace-nowrap">
                         Plan Integral</div>
                     <h3 class="text-3xl font-black text-white mb-2 group-hover:text-brand-pink transition-colors">
-                        Mensual</h3>
+                        Socio Tecnológico</h3>
                     <p class="text-brand-text-muted text-sm mb-8">Transformación constante y acompañamiento experto.</p>
 
                     <ul class="space-y-4 mb-10 flex-1">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check-double text-brand-pink mt-1"></i>
-                            <span class="text-white font-bold">Todo lo incluido en el plan "Metodologia Base"</span>
+                            <span class="text-white font-bold">Todo lo incluido en el plan "Implementación Core"</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-arrow-trend-up text-brand-pink mt-1"></i>
@@ -1177,9 +1190,14 @@
                             <span class="text-brand-text-main">Soporte prioritario y asesoría estratégica</span>
                         </li>
                     </ul>
-                    <a href="#contacto"
+                    <!-- <a href="#contacto"
                         class="w-full py-4 rounded-xl bg-brand-gradient hover:bg-brand-gradient-hover text-center text-white font-bold transition-all shadow-lg shadow-brand-pink/20 hover:-translate-y-1">Comenzar
-                        Ahora</a>
+                        Ahora</a> -->
+                    <a href="https://wa.me/56930396095?text=Hola!%20Me%20interesa%20iniciar%20con%20el%20plan%20Socio%20Tecnol%C3%B3gico."
+                        target="_blank" rel="noopener noreferrer"
+                        class="w-full py-4 rounded-xl bg-brand-gradient hover:bg-brand-gradient-hover text-center text-white font-bold transition-all shadow-lg shadow-brand-pink/20 hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Comenzar Ahora
+                    </a>
                 </div>
             </div>
 
@@ -1257,65 +1275,112 @@
     <section id="contacto" class="py-32 relative z-10 overflow-hidden bg-brand-base border-t border-white/5">
         <div class="absolute inset-0 bg-brand-gradient opacity-5 blur-[150px] pointer-events-none"></div>
 
-        <div class="max-w-3xl mx-auto px-6 text-center relative z-20">
-            <h2 class="text-5xl md:text-7xl font-black text-white mb-8">¿Listo para el Control?</h2>
-            <p class="text-xl text-brand-text-muted mb-12 font-light max-w-xl mx-auto">
-                Agenda una reunión de 30 minutos sin compromiso y descubre cómo transformar tu operación.
-            </p>
+        <div class="max-w-5xl mx-auto px-6 relative z-20">
+            <div class="text-center mb-16">
+                <span class="text-brand-pink font-bold text-xs tracking-widest uppercase block mb-4">Contacto</span>
+                <h2 class="text-4xl md:text-6xl font-black text-white mb-6">¿Listo para el Control?</h2>
+                <p class="text-xl text-brand-text-muted font-light max-w-2xl mx-auto">
+                    Agenda una reunión de 30 minutos sin compromiso o contáctanos directamente para descubrir cómo
+                    transformar tu operación.
+                </p>
+            </div>
 
-            <form id="contact-form" class="max-w-md mx-auto space-y-4">
-                <div class="relative group">
-                    <input type="text" id="contact-name" placeholder="Tu Nombre/Empresa (Opcional)"
-                        class="w-full bg-brand-surface border border-brand-highlight rounded-xl py-4 px-6 text-white placeholder-gray-600 focus:outline-none focus:border-brand-pink transition-colors">
-                </div>
-                <div class="relative group">
-                    <input type="tel" id="contact-phone" placeholder="Tu WhatsApp (+569...) (Opcional)"
-                        class="w-full bg-brand-surface border border-brand-highlight rounded-xl py-4 px-6 text-white placeholder-gray-600 focus:outline-none focus:border-brand-blue transition-colors">
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12 text-left">
+                <!-- Columna Izquierda: Formulario WhatsApp y Correo -->
+                <div
+                    class="bg-brand-surface/80 border border-brand-highlight p-8 rounded-3xl shadow-xl flex flex-col h-full hover:border-brand-blue/50 transition-colors duration-300">
+                    <div class="flex items-center gap-4 mb-8 justify-start">
+                        <div
+                            class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center shrink-0 border border-brand-blue/20">
+                            <i class="fa-brands fa-whatsapp text-brand-blue text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Mensaje Directo</h3>
+                            <p class="text-brand-text-muted text-sm mt-1">Escríbenos directamente</p>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" class="space-y-4 flex-1 flex flex-col">
+                        <div class="relative group">
+                            <input type="text" id="contact-name" placeholder="Tu Nombre/Empresa (Opcional)"
+                                class="w-full bg-brand-base border border-brand-highlight rounded-xl py-4 px-5 text-white placeholder-gray-500 focus:outline-none focus:border-brand-blue transition-colors text-sm">
+                        </div>
+                        <div class="relative group">
+                            <input type="tel" id="contact-phone" placeholder="Tu WhatsApp (+569...) (Opcional)"
+                                class="w-full bg-brand-base border border-brand-highlight rounded-xl py-4 px-5 text-white placeholder-gray-500 focus:outline-none focus:border-brand-blue transition-colors text-sm">
+                        </div>
+
+                        <button type="submit"
+                            class="w-full mt-auto mb-6 flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-[#25D366]/30 transition-all transform hover:-translate-y-1 tracking-wide uppercase text-sm">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Contactar por WhatsApp
+                        </button>
+
+                        <div class="text-center pt-6 border-t border-brand-highlight">
+                            <button type="button" onclick="copyEmailMain()" id="copy-email-main"
+                                class="text-brand-text-muted text-sm hover:text-white transition-colors underline bg-transparent border-none cursor-pointer p-0">O
+                                envíanos un correo a: contacto@dorkas.cl</button>
+                            <script>
+                                function copyEmailMain() {
+                                    navigator.clipboard.writeText('contacto@dorkas.cl').then(function () {
+                                        const btn = document.getElementById('copy-email-main');
+                                        const originalText = btn.innerHTML;
+                                        btn.innerHTML = '<i class="fa-solid fa-check text-[#25D366]"></i> ¡Correo copiado a tu portapapeles!';
+                                        setTimeout(() => {
+                                            btn.innerHTML = originalText;
+                                        }, 2500);
+                                    });
+                                }
+                            </script>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="mt-8 text-left bg-brand-surface/50 border border-brand-blue/20 p-5 rounded-xl">
-                    <h4 class="text-white font-bold text-sm mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-calendar-check text-brand-blue"></i> Disponibilidad de Reuniones
-                    </h4>
-                    <ul class="text-brand-text-muted text-[13px] space-y-2">
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-video mt-1 text-brand-pink/70"></i>
-                            <span>Reunión Online (Meet/Zoom)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-map-location-dot mt-1 text-brand-purple/70"></i>
-                            <span>Presencial: Los Militares 5620, of 905, 7550000 Las Condes, Región
-                                Metropolitana</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-building-user mt-1 text-brand-blue/70"></i>
-                            <span>Visita a su empresa según coordinación</span>
-                        </li>
-                    </ul>
-                </div>
+                <!-- Columna Derecha: Google Calendar y Disponibilidad -->
+                <div
+                    class="bg-brand-surface/80 border border-brand-highlight p-8 rounded-3xl shadow-xl shadow-brand-purple/5 flex flex-col h-full hover:border-brand-purple/50 transition-colors duration-300">
+                    <div class="flex items-center gap-4 mb-8 justify-start">
+                        <div
+                            class="w-12 h-12 bg-brand-purple/10 rounded-xl flex items-center justify-center shrink-0 border border-brand-purple/20">
+                            <i class="fa-regular fa-calendar-check text-brand-purple text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Agendar Videollamada</h3>
+                            <p class="text-brand-text-muted text-sm mt-1">Busca el horario que prefieras</p>
+                        </div>
+                    </div>
 
-                <button type="submit"
-                    class="w-full mt-6 flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-5 rounded-xl shadow-lg hover:shadow-[#25D366]/30 transition-all transform hover:-translate-y-1 tracking-wide uppercase text-sm">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> Contactar por WhatsApp
-                </button>
-                <div class="text-center mt-4">
-                    <button type="button" onclick="copyEmailMain()" id="copy-email-main"
-                        class="text-brand-text-muted text-xs hover:text-white transition-colors underline bg-transparent border-none cursor-pointer p-0">O
-                        envíanos un correo a: contacto@dorkas.cl</button>
-                    <script>
-                        function copyEmailMain() {
-                            navigator.clipboard.writeText('contacto@dorkas.cl').then(function () {
-                                const btn = document.getElementById('copy-email-main');
-                                const originalText = btn.innerHTML;
-                                btn.innerHTML = '<i class="fa-solid fa-check text-[#25D366]"></i> ¡Correo copiado a tu portapapeles!';
-                                setTimeout(() => {
-                                    btn.innerHTML = originalText;
-                                }, 2500);
-                            });
-                        }
-                    </script>
+                    <p class="text-brand-text-muted text-sm leading-relaxed mb-8 flex-1">
+                        Selecciona un bloque de tiempo de 30 minutos en nuestro calendario para una demostración o
+                        asesoría personalizada vía Google Meet.
+                    </p>
+
+                    <a href="https://calendar.app.google/Ymoc8wPqkUELx7DU9" target="_blank" rel="noopener noreferrer"
+                        class="w-full py-4 rounded-xl bg-white text-brand-base hover:bg-gray-200 font-bold transition-all shadow-lg flex items-center justify-center gap-3 mb-8 transform hover:-translate-y-1">
+                        <i class="fa-brands fa-google text-lg"></i> Agendar en Google Calendar
+                    </a>
+
+                    <!-- Disponibilidad Info -->
+                    <div class="text-left bg-brand-base border border-brand-highlight p-5 rounded-2xl">
+                        <h4 class="text-white font-bold text-xs mb-3 flex items-center gap-2 uppercase tracking-wide">
+                            <i class="fa-solid fa-location-dot text-brand-purple"></i> Disponibilidad de Reuniones
+                        </h4>
+                        <ul class="text-brand-text-muted text-[13px] space-y-3">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-video mt-0.5 text-brand-pink/70 text-sm"></i>
+                                <span>Reunión Online (Meet/Zoom)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-building mt-0.5 text-brand-purple/70 text-sm"></i>
+                                <span>Presencial: Los Militares 5620, of 905, Las Condes, RM</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-building-user mt-0.5 text-brand-blue/70 text-sm"></i>
+                                <span>Visita a su empresa según coordinación</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </form>
+            </div>
 
             <script>
                 document.getElementById('contact-form').addEventListener('submit', function (e) {
@@ -1345,8 +1410,8 @@
                 <div class="text-center md:text-left">
                     <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
                         <i class="fa-solid fa-map-location-dot text-brand-blue text-sm"></i>
-                        <span class="text-brand-text-muted font-bold text-[10px] tracking-widest uppercase">Opiniones de
-                            Clientes</span>
+                        <span class="text-brand-text-muted font-bold text-[20px] tracking-widest uppercase">Casos
+                            de Éxito</span>
                     </div>
                     <h2 class="text-2xl md:text-3xl font-black text-white mb-2">Respaldo Real</h2>
                     <div class="flex items-center justify-center md:justify-start gap-3">
@@ -1381,8 +1446,9 @@
                                     class="fa-solid fa-quote-left text-brand-blue/20 text-2xl absolute -top-2 -left-3"></i>
                                 <p
                                     class="text-brand-text-main text-sm md:text-base leading-relaxed italic font-light relative z-10 pl-6">
-                                    "DORKAS transformó nuestra operación. Gracias a su plataforma logramos facilitar
-                                    procesos que antes eran un caos. Un socio clave para RentaloChile."
+                                    "DORKAS transformó nuestra operación. Al integrar la gestión de flotas y automatizar
+                                    nuestros contratos, logramos facilitar procesos que antes eran un caos. Un socio
+                                    clave para nuestra escalabilidad."
                                 </p>
                             </div>
                         </div>
@@ -1413,8 +1479,20 @@
             <div class="flex flex-col gap-3">
                 <h4 class="text-white font-bold text-sm mb-1 uppercase tracking-widest">Contacto</h4>
 
+                <a href="https://wa.me/56930396095" target="_blank" rel="noopener noreferrer"
+                    class="text-brand-text-muted hover:text-white transition-colors text-sm flex items-center gap-2 w-fit">
+                    <i class="fa-brands fa-whatsapp text-[#25D366]"></i>
+                    <span>+56 9 3039 6095</span>
+                </a>
+
+                <a href="https://wa.me/56962817564" target="_blank" rel="noopener noreferrer"
+                    class="text-brand-text-muted hover:text-white transition-colors text-sm flex items-center gap-2 w-fit">
+                    <i class="fa-brands fa-whatsapp text-[#25D366]"></i>
+                    <span>+56 9 6281 7564</span>
+                </a>
+
                 <button type="button" onclick="copyEmailFooter()" id="copy-email-footer"
-                    class="text-brand-text-muted hover:text-white transition-colors text-sm flex items-center gap-2 bg-transparent border-none cursor-pointer outline-none w-fit text-left p-0">
+                    class="text-brand-text-muted hover:text-white transition-colors text-sm flex items-center gap-2 bg-transparent border-none cursor-pointer outline-none w-fit text-left p-0 mt-1">
                     <i class="fa-solid fa-envelope text-brand-pink"></i>
                     <span>contacto@dorkas.cl</span>
                 </button>
@@ -1911,7 +1989,7 @@
                         : 'w-2 h-2 rounded-full bg-white/30 transition-colors';
                 });
             }
-            // Reproducir video automáticamente
+            // Reproducir video automaticamente
             var video = modal.querySelector('video');
             if (video) {
                 video.play().catch(function (e) { console.log('Video autoplay bloqueado:', e); });
@@ -1930,13 +2008,7 @@
 
         // Eventos Click - Tarjetas de Proyectos
         document.addEventListener('DOMContentLoaded', function () {
-            // Asignar click al Hero (DESACTIVADO)
-            // var heroBtn = document.getElementById('hero-video-mockup');
-            // if (heroBtn) {
-            //     heroBtn.onclick = function () { openVideo('modal-hero'); };
-            // }
-
-            // Asignar click a Análisis de Costo
+            // Asignar click a Analisis de Costo
             var analisisBtn = document.getElementById('analisis-preview');
             if (analisisBtn) {
                 analisisBtn.onclick = function () { openVideo('modal-analisis'); };
@@ -1948,26 +2020,25 @@
                 contratosBtn.onclick = function () { openVideo('modal-contratos'); };
             }
 
-            // Asignar click a Cotizador Rápido
+            // Asignar click a Cotizador Rapido
             var cotizadorBtn = document.getElementById('cotizador-preview');
             if (cotizadorBtn) {
                 cotizadorBtn.onclick = function () { openVideo('modal-cotizador'); };
             }
 
-            // Asignar click a Panel de Mantención
+            // Asignar click a Panel de Mantencion
             var mantencionBtn = document.getElementById('mantencion-preview');
             if (mantencionBtn) {
                 mantencionBtn.onclick = function () { openVideo('modal-mantencion'); };
             }
 
-            // Asignar click a Sistema de Pañol
+            // Asignar click a Sistema de Panol
             var panolBtn = document.getElementById('panol-preview');
             if (panolBtn) {
                 panolBtn.onclick = function () { openVideo('modal-panol'); };
             }
         });
     </script>
-
 </body>
 
 </html>
